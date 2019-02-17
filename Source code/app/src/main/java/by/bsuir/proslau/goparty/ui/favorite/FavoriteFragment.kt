@@ -1,4 +1,4 @@
-package by.bsuir.proslau.partygo.ui.favorite
+package by.bsuir.proslau.goparty.ui.favorite
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

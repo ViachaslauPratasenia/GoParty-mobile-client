@@ -1,4 +1,4 @@
-package by.bsuir.proslau.partygo.ui.recommended
+package by.bsuir.proslau.goparty.ui.recommended
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
