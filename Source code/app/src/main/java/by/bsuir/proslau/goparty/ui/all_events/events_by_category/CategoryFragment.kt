@@ -8,9 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import by.bsuir.proslau.goparty.R
-import by.bsuir.proslau.goparty.logic.events.CategoryImpl.Companion.initCategories
-import by.bsuir.proslau.goparty.ui.all_events.events_by_category.Category
-import by.bsuir.proslau.goparty.ui.all_events.events_by_category.CategoryRecyclerViewAdapter
+import by.bsuir.proslau.goparty.logic.categories.CategoryImpl.Companion.initCategories
 
 class CategoryFragment : Fragment() {
     internal lateinit var view: View
@@ -25,10 +23,10 @@ class CategoryFragment : Fragment() {
 
     private fun initImageBitmaps() {
         categories = initCategories()
-        initContactRecyclerView()
+        initCategoriesRecyclerView()
     }
 
-    private fun initContactRecyclerView() {
+    private fun initCategoriesRecyclerView() {
         adapter = CategoryRecyclerViewAdapter(
             categories as java.util.ArrayList<Category>,
             context!!

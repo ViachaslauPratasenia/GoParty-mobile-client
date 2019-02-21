@@ -37,6 +37,6 @@ class CategoryRecyclerViewAdapter(private var categoriesList: ArrayList<Category
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var categoryImage: ImageView = itemView.findViewById(R.id.image_category)
         var categoryTitle: TextView = itemView.findViewById(R.id.title_category)
-        var constraintLayout: ConstraintLayout = itemView.findViewById(R.id.event_parent_layout)
+        var constraintLayout: ConstraintLayout = itemView.findViewById(R.id.category_parent_layout)
     }
 }

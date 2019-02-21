@@ -1,4 +1,4 @@
-package by.bsuir.proslau.goparty.logic.events
+package by.bsuir.proslau.goparty.logic.categories
 
 import by.bsuir.proslau.goparty.R
 import by.bsuir.proslau.goparty.ui.all_events.events_by_category.Category
