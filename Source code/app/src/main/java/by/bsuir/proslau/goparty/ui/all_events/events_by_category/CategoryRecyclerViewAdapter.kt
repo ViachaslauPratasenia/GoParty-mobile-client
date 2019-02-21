@@ -1,4 +1,4 @@
-package by.bsuir.proslau.goparty.ui.all_events
+package by.bsuir.proslau.goparty.ui.all_events.events_by_category
 
 import android.content.Context
 import android.support.constraint.ConstraintLayout

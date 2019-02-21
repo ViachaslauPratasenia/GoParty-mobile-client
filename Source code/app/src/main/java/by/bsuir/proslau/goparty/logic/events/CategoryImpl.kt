@@ -1,9 +1,10 @@
 package by.bsuir.proslau.goparty.logic.events
 
 import by.bsuir.proslau.goparty.R
-import by.bsuir.proslau.goparty.ui.all_events.Category
+import by.bsuir.proslau.goparty.ui.all_events.events_by_category.Category
 
-data class CategoryImpl(override val image : Int, override val title : String) : Category {
+data class CategoryImpl(override val image : Int, override val title : String) :
+    Category {
     companion object {
         fun initCategories() : List<Category> {
             val list : ArrayList<Category> = ArrayList()
