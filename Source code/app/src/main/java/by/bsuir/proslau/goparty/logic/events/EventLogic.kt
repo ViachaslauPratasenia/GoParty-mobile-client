@@ -7,7 +7,10 @@ data class EventLogic(
     override val title: String,
     override val date: String,
     override val location: String,
-    override val photo: String
+    override val photo: String,
+    override val description: String,
+    override val quantityJoined: Int,
+    override val joinedId: ArrayList<Long>
 ) : Event {
     companion object {
         fun initEvents() : List<Event> {
@@ -15,16 +18,23 @@ data class EventLogic(
             list.add(EventLogic(
                 1, "Рок за бобров",
                 "03.08.2019", "Боровая, Беларусь",
-                "https://pp.userapi.com/c850524/v850524486/c0261/JYSERKwJidM.jpg"))
+                "https://pp.userapi.com/c850524/v850524486/c0261/JYSERKwJidM.jpg",
+                "desc1", 25, ArrayList()
+            ))
             list.add(EventLogic(
                 2, "Champions League Final", "01.06.2019", "Madrid, Spain",
-                "https://pp.userapi.com/c638328/v638328834/10c04/Wjv5jAL_-8E.jpg"))
+                "https://pp.userapi.com/c638328/v638328834/10c04/Wjv5jAL_-8E.jpg",
+                "desc2", 50, ArrayList()
+            ))
             list.add(EventLogic(
                 3, "Juventus - Atletico", "12.03.2019", "Torino, Italy",
-                "https://cdn.images.express.co.uk/img/dynamic/67/590x/Cristiano-Ronaldo-1089767.jpg?r=1550657862236.jpg"))
+                "https://cdn.images.express.co.uk/img/dynamic/67/590x/Cristiano-Ronaldo-1089767.jpg?r=1550657862236.jpg",
+                "desc3", 75, ArrayList()
+            ))
             list.add(EventLogic(
                 4, "Aquaman","21.02.2019", "Minsk, Belarus",
-                "https://cdn.arstechnica.net/wp-content/uploads/2018/11/aquaALTTOP-800x542.jpg"
+                "https://cdn.arstechnica.net/wp-content/uploads/2018/11/aquaALTTOP-800x542.jpg",
+                "desc4", 100, ArrayList()
             ))
             return list
         }

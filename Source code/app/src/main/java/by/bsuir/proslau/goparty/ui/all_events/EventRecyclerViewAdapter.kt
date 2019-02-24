@@ -1,7 +1,10 @@
 package by.bsuir.proslau.goparty.ui.all_events
 
+import android.content.Intent
+import android.support.v7.app.AppCompatActivity
 import android.content.Context
 import android.support.constraint.ConstraintLayout
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -44,11 +47,22 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<Event>, private 
             Toast.makeText(context, currentItem.title + " joined", Toast.LENGTH_SHORT).show()
         }
         viewHolder.eventOpen.setOnClickListener {
-            Toast.makeText(context, currentItem.title + " opened", Toast.LENGTH_SHORT).show()
+            if (currentUser != null) {
+                startActivityWithData(currentUser, currentItem)
+            }
         }
         viewHolder.constraintLayout.setOnClickListener {
-            Toast.makeText(context, currentItem.title, Toast.LENGTH_SHORT).show()
+            if (currentUser != null) {
+                startActivityWithData(currentUser, currentItem)
+            }
         }
+    }
+
+    private fun startActivityWithData(currentUser : ProfileForEvents, currentEvent : Event ){
+        val intent = Intent(context, EventDetailActivity::class.java)
+        intent.putExtra("event", currentEvent)
+        intent.putExtra("user", currentUser)
+        context.startActivity(intent)
     }
 
     override fun getItemCount(): Int {
