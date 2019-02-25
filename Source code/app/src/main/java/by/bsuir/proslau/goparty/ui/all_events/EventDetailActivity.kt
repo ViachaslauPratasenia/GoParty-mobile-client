@@ -5,14 +5,15 @@ import android.os.Bundle
 import android.support.v7.app.ActionBar
 import android.support.v7.widget.Toolbar
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import by.bsuir.proslau.goparty.R
 import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 
 class EventDetailActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_detail)
@@ -48,6 +49,15 @@ class EventDetailActivity : AppCompatActivity() {
         username.text = user.username
         val quantity = findViewById<View>(R.id.event_detail_quantity) as TextView
         quantity.text = event.quantityJoined.toString()
+
+        val btnMessage = findViewById<View>(R.id.btn_event_detail_message) as Button
+        btnMessage.setOnClickListener {
+            Toast.makeText(this, "Message button", Toast.LENGTH_SHORT).show()
+        }
+        val btnJoin = findViewById<View>(R.id.btn_event_detail_join) as Button
+        btnJoin.setOnClickListener {
+            Toast.makeText(this, "Join button", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
