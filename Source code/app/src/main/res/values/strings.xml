@@ -2,6 +2,6 @@
     <string name="app_name">GoParty</string>
     <string name="title_recommended">Recommended</string>
     <string name="title_events">Events</string>
-    <string name="title_favorite">Favorite</string>
+    <string name="title_joined">Joined</string>
     <string name="title_profile">Profile</string>
 </resources>
