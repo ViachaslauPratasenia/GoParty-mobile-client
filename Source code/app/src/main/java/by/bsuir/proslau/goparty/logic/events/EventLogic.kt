@@ -7,5 +7,8 @@ data class EventLogic(
     override val title: String,
     override val date: String,
     override val location: String,
-    override val photo: String
+    override val photo: String,
+    override val description: String,
+    override val quantityJoined: Int,
+    override val joinedId: ArrayList<Long>
 ) : Event
