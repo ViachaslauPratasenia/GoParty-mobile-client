@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import by.bsuir.proslau.goparty.ui.all_events.events_by_category.CategoryFragment
-import by.bsuir.proslau.goparty.ui.all_events.favorite.FavoriteFragment
+import by.bsuir.proslau.goparty.ui.all_events.joined.JoinedFragment
 import by.bsuir.proslau.goparty.ui.profile.ProfileFragment
 import by.bsuir.proslau.goparty.ui.all_events.recommended.RecommendedFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     val recommendedFragment = RecommendedFragment()
     val eventsFragment = CategoryFragment()
-    val favoriteFragment = FavoriteFragment()
+    val favoriteFragment = JoinedFragment()
     val profileFragment = ProfileFragment()
     val fragmentManager : FragmentManager = supportFragmentManager
     var activeFragment : Fragment = recommendedFragment
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 activeFragment = eventsFragment
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_favorite -> {
+            R.id.navigation_joined -> {
                 fragmentManager.beginTransaction().hide(activeFragment).show(favoriteFragment).commit()
                 activeFragment = favoriteFragment
                 return@OnNavigationItemSelectedListener true

@@ -2,10 +2,10 @@
     <string name="app_name">GoParty</string>
     <string name="title_recommended">Recommended</string>
     <string name="title_events">Events</string>
-    <string name="title_favorite">Favorite</string>
+    <string name="title_joined">Joined</string>
     <string name="title_profile">Profile</string>
     <string name="str_date">Date:</string>
     <string name="str_location">Location:</string>
     <string name="description">Description:</string>
-    <string name="organizator">Organizator</string>
+    <string name="organizer">Organizer</string>
 </resources>
