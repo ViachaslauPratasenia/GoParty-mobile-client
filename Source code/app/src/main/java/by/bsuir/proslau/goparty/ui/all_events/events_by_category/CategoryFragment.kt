@@ -8,12 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import by.bsuir.proslau.goparty.R
-import by.bsuir.proslau.goparty.logic.categories.CategoryImpl.Companion.initCategories
+import by.bsuir.proslau.goparty.logic.categories.CategoriesLogicManager
 
 class CategoryFragment : Fragment() {
     internal lateinit var view: View
     lateinit var adapter : CategoryRecyclerViewAdapter
     private var categories : List<Category> = ArrayList()
+    private val categoriesManager = CategoriesLogicManager()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_events, container, false)
@@ -22,7 +23,7 @@ class CategoryFragment : Fragment() {
     }
 
     private fun initImageBitmaps() {
-        categories = initCategories()
+        categories = categoriesManager.getAll()
         initCategoriesRecyclerView()
     }
 

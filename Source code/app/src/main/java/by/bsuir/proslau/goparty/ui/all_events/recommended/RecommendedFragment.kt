@@ -9,12 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import by.bsuir.proslau.goparty.R
-import by.bsuir.proslau.goparty.logic.events.EventLogic.Companion.initEvents
+import by.bsuir.proslau.goparty.logic.events.EventLogicManager
 import by.bsuir.proslau.goparty.ui.all_events.Event
 import by.bsuir.proslau.goparty.ui.all_events.EventRecyclerViewAdapter
 
 class RecommendedFragment : Fragment() {
     internal lateinit var view: View
+    private val eventManager = EventLogicManager()
     lateinit var adapter : EventRecyclerViewAdapter
     private var events : List<Event> = ArrayList()
 
@@ -29,7 +30,7 @@ class RecommendedFragment : Fragment() {
     }
 
     private fun initImageBitmaps() {
-        events = initEvents()
+        events = eventManager.getAll()
         initCategoriesRecyclerView()
     }
 
