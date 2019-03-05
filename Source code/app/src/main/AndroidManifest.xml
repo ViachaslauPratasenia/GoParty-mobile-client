@@ -14,9 +14,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.authorization.PasswordActivity"
-            android:noHistory="true"/>
+            android:noHistory="true"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.authorization.RegisterActivity"
-            android:noHistory="true"/>
+            android:noHistory="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.authorization.AuthActivity"
             android:noHistory="true"
