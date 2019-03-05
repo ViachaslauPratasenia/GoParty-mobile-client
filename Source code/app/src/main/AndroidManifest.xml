@@ -13,14 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.authorization.PasswordActivity"
+        <activity android:name=".ui.all_events.AddEventActivity"></activity>
+        <activity
+            android:name=".ui.authorization.PasswordActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.authorization.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.authorization.RegisterActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.profile.ProfileEditActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.profile.ProfileEditActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.authorization.AuthActivity"
             android:noHistory="true"
