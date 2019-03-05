@@ -8,4 +8,14 @@
     <string name="str_location">Location:</string>
     <string name="description">Description:</string>
     <string name="organizer">Organizer</string>
+    <string name="str_login">Login</string>
+    <string name="str_create_account">Create an account</string>
+    <string name="str_next">Next</string>
+    <string name="location">Location</string>
+    <string name="surname">Surname</string>
+    <string name="name">Name</string>
+    <string name="nickname">Nickname</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
 </resources>
