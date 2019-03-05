@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import by.bsuir.proslau.goparty.R
+import by.bsuir.proslau.goparty.ui.authorization.AuthActivity
 
 class ProfileFragment : Fragment() {
 
@@ -77,6 +78,8 @@ class ProfileFragment : Fragment() {
         }
         btnLogout.setOnClickListener {
             activity!!.finish()
+            val intent = Intent(profileView.context, AuthActivity::class.java)
+            startActivity(intent)
         }
 
         return profileView
