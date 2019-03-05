@@ -19,6 +19,8 @@
         <activity android:name=".ui.authorization.RegisterActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.profile.ProfileEditActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.authorization.AuthActivity"
             android:noHistory="true"
