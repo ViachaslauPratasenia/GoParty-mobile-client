@@ -11,11 +11,15 @@
     <string name="str_login">Login</string>
     <string name="str_create_account">Create an account</string>
     <string name="str_next">Next</string>
-    <string name="location">Location</string>
     <string name="surname">Surname</string>
     <string name="name">Name</string>
     <string name="nickname">Nickname</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="location">Location</string>
+    <string name="add_photo">Add photo</string>
+    <string name="add_event">Add event</string>
 </resources>
