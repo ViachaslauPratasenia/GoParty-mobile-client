@@ -11,9 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a97cd4a7-adce-4356-857a-033d61f0a228" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/authorization/RunnableWithError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/authorization/RunnableWithError.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/ui/authorization/AuthActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/ui/authorization/AuthActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +111,7 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="1" />
@@ -146,7 +143,7 @@
           <entry key="gradle" value="2" />
           <entry key="java" value="82" />
           <entry key="kt" value="636" />
-          <entry key="txt" value="48" />
+          <entry key="txt" value="94" />
           <entry key="xml" value="37" />
         </counts>
       </usages-collector>
@@ -155,7 +152,7 @@
           <entry key="Groovy" value="2" />
           <entry key="JAVA" value="82" />
           <entry key="Kotlin" value="636" />
-          <entry key="PLAIN_TEXT" value="48" />
+          <entry key="PLAIN_TEXT" value="94" />
           <entry key="XML" value="37" />
         </counts>
       </usages-collector>
@@ -2955,7 +2952,14 @@
       <option name="project" value="LOCAL" />
       <updated>1552574376564</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implemented authorization logic">
+      <created>1552580625053</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1552580625053</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2969,7 +2973,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992908" visible="true" weight="0.21073826" />
@@ -3032,7 +3035,8 @@
     <MESSAGE value="Implemented choose category for events" />
     <MESSAGE value="Added authorization logic" />
     <MESSAGE value="Added authorization logic without implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added authorization logic without implementation" />
+    <MESSAGE value="Implemented authorization logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented authorization logic" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="editorHistoryManager">
