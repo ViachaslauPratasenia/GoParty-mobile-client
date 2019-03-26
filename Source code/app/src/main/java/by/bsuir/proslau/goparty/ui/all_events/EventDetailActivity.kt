@@ -5,13 +5,10 @@ import android.os.Bundle
 import android.support.v7.app.ActionBar
 import android.support.v7.widget.Toolbar
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import by.bsuir.proslau.goparty.R
 import com.bumptech.glide.Glide
-import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.activity_event_detail.*
 
 class EventDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,35 +24,25 @@ class EventDetailActivity : AppCompatActivity() {
         val user = intent.getSerializableExtra("user") as? ProfileForEvents
         val event = intent.getSerializableExtra("event") as? Event
 
-        val eventTitle = findViewById<View>(R.id.event_detail_title) as TextView
-        eventTitle.text = event!!.title
-        val eventDate = findViewById<View>(R.id.event_detail_date) as TextView
-        eventDate.text = event.date
-        val eventLocation = findViewById<View>(R.id.event_detail_location) as TextView
-        eventLocation.text = event.location
-        val desc = findViewById<View>(R.id.event_detail_desc) as TextView
-        desc.text = event.description
-        val eventPhoto = findViewById<View>(R.id.event_detail_image) as ImageView
+        event_detail_title.text = event!!.title
+        event_detail_date.text = event.date
+        event_detail_location.text = event.location
+        event_detail_desc.text = event.description
         Glide.with(this)
             .asBitmap()
             .load(event.photo)
-            .into(eventPhoto)
-        val userAvatar = findViewById<View>(R.id.event_detail_org_avatar) as CircleImageView
+            .into(event_detail_image)
         Glide.with(this)
             .asBitmap()
             .load(user!!.avatar)
-            .into(userAvatar)
-        val username = findViewById<View>(R.id.event_detail_organ) as TextView
-        username.text = user.username
-        val quantity = findViewById<View>(R.id.event_detail_quantity) as TextView
-        quantity.text = event.quantityJoined.toString()
+            .into(event_detail_org_avatar)
+        event_detail_organ.text = user.username
+        event_detail_quantity.text = event.quantityJoined.toString()
 
-        val btnMessage = findViewById<View>(R.id.btn_event_detail_message) as Button
-        btnMessage.setOnClickListener {
+        btn_event_detail_message.setOnClickListener {
             Toast.makeText(this, "Message button", Toast.LENGTH_SHORT).show()
         }
-        val btnJoin = findViewById<View>(R.id.btn_event_detail_join) as Button
-        btnJoin.setOnClickListener {
+        btn_event_detail_join.setOnClickListener {
             Toast.makeText(this, "Join button", Toast.LENGTH_SHORT).show()
         }
     }
