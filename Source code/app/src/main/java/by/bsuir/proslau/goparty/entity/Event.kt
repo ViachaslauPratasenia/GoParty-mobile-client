@@ -4,39 +4,35 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class Event(
-    @SerializedName("userId")
+    @SerializedName("UserId")
     @Expose
     private val userId : Long,
 
-    @SerializedName("title")
+    @SerializedName("Title")
     @Expose
     private val title : String,
 
-    @SerializedName("date")
+    @SerializedName("Date")
     @Expose
     private val date : String,
 
-    @SerializedName("location")
+    @SerializedName("Location")
     @Expose
     private val location : String,
 
-    @SerializedName("photoURL")
+    @SerializedName("PhotoUrl")
     @Expose
     private val photoURL : String,
 
-    @SerializedName("description")
+    @SerializedName("Description")
     @Expose
     private val description : String,
 
-    @SerializedName("tags")
+    @SerializedName("Tags")
     @Expose
     private val tags : ArrayList<Int>,
 
-    @SerializedName("quantityJoined")
+    @SerializedName("EventSubcribers")
     @Expose
-    private val quantityJoined : Int,
-
-    @SerializedName("joinedNicks")
-    @Expose
-    private val joinedNicks : ArrayList<String>
+    private val quantityJoined : Int
 ) {}
