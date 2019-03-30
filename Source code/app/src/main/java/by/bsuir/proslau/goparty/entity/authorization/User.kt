@@ -1,5 +1,6 @@
 package by.bsuir.proslau.goparty.entity.authorization
 
+import by.bsuir.proslau.goparty.entity.Location
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -20,17 +21,9 @@ data class User(
     @Expose
     private val surname: String,
 
-    @SerializedName("City")
+    @SerializedName("Location")
     @Expose
-    private val city: String,
-
-    @SerializedName("Region")
-    @Expose
-    private val region: String,
-
-    @SerializedName("Country")
-    @Expose
-    private val country: String,
+    private val location: Location,
 
     @SerializedName("AvatarUrl")
     @Expose

@@ -12,13 +12,17 @@ class Event(
     @Expose
     private val title : String,
 
+    @SerializedName("Address")
+    @Expose
+    private val address : String,
+
     @SerializedName("Date")
     @Expose
     private val date : String,
 
     @SerializedName("Location")
     @Expose
-    private val location : String,
+    private val location : Location,
 
     @SerializedName("PhotoUrl")
     @Expose
