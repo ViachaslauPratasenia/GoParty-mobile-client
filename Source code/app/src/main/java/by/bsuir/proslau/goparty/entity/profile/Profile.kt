@@ -1,5 +1,6 @@
 package by.bsuir.proslau.goparty.entity.profile
 
+import by.bsuir.proslau.goparty.entity.Location
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -16,17 +17,9 @@ class Profile(
     @Expose
     private val username: String,
 
-    @SerializedName("City")
+    @SerializedName("Location")
     @Expose
-    private val city: String,
-
-    @SerializedName("Region")
-    @Expose
-    private val region: String,
-
-    @SerializedName("Country")
-    @Expose
-    private val country: String,
+    private val location: Location,
 
     @SerializedName("Email")
     @Expose
