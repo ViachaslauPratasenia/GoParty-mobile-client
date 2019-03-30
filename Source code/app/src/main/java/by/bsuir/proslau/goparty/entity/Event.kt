@@ -34,5 +34,5 @@ class Event(
 
     @SerializedName("EventSubcribers")
     @Expose
-    private val quantityJoined : Int
+    private val eventSubcribers : Int
 ) {}
