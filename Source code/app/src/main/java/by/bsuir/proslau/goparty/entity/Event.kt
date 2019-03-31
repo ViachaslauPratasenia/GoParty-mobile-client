@@ -1,5 +1,8 @@
 package by.bsuir.proslau.goparty.entity
 
+import by.bsuir.proslau.goparty.entity.location.City
+import by.bsuir.proslau.goparty.entity.location.Country
+import by.bsuir.proslau.goparty.entity.location.Region
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -20,11 +23,19 @@ class Event(
     @Expose
     private val date : String,
 
-    @SerializedName("Location")
+    @SerializedName("Country")
     @Expose
-    private val location : Location,
+    private val country: Country,
 
-    @SerializedName("PhotoUrl")
+    @SerializedName("Region")
+    @Expose
+    private val region: Region,
+
+    @SerializedName("City")
+    @Expose
+    private val city : City,
+
+    @SerializedName("Image")
     @Expose
     private val photoURL : String,
 
