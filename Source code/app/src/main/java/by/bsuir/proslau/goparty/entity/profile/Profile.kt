@@ -41,6 +41,6 @@ class Profile(
 
     @SerializedName("Contacts")
     @Expose
-    private val contacts: Contacts
+    private val contacts: ArrayList<Contact>
 ) {
 }
