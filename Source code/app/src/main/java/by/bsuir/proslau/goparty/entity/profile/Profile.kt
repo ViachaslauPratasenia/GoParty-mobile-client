@@ -1,4 +1,4 @@
-package by.bsuir.proslau.goparty.entity.authorization
+package by.bsuir.proslau.goparty.entity.profile
 
 import by.bsuir.proslau.goparty.entity.location.City
 import by.bsuir.proslau.goparty.entity.location.Country
@@ -6,15 +6,7 @@ import by.bsuir.proslau.goparty.entity.location.Region
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class User(
-    @SerializedName("Email")
-    @Expose
-    private val email: String,
-
-    @SerializedName("Username")
-    @Expose
-    private val username: String,
-
+class Profile(
     @SerializedName("Name")
     @Expose
     private val name: String,
@@ -22,6 +14,10 @@ data class User(
     @SerializedName("Surname")
     @Expose
     private val surname: String,
+
+    @SerializedName("Username")
+    @Expose
+    private val username: String,
 
     @SerializedName("Country")
     @Expose
@@ -35,7 +31,16 @@ data class User(
     @Expose
     private val city : City,
 
+    @SerializedName("Email")
+    @Expose
+    private val email: String,
+
     @SerializedName("Image")
     @Expose
-    private val avatarURL: String
-) {}
+    private val photoURL: String,
+
+    @SerializedName("Contacts")
+    @Expose
+    private val contacts: ArrayList<Contact>
+) {
+}
