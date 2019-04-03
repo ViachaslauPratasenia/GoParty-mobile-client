@@ -5,49 +5,61 @@ import by.bsuir.proslau.goparty.entity.location.Country
 import by.bsuir.proslau.goparty.entity.location.Region
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
-class Event(
+class Event{
     @SerializedName("UserId")
     @Expose
-    private val userId : Long,
+    var userId : UUID? = null
+        private set
 
     @SerializedName("Title")
     @Expose
-    private val title : String,
+    var title : String = ""
+        private set
 
     @SerializedName("Address")
     @Expose
-    private val address : String,
+    var address : String = ""
+        private set
 
     @SerializedName("Date")
     @Expose
-    private val date : String,
+    var date : String = ""
+        private set
 
     @SerializedName("Country")
     @Expose
-    private val country: Country,
+    var country: Country? = null
+        private set
 
     @SerializedName("Region")
     @Expose
-    private val region: Region,
+    var region: Region? = null
+        private set
 
     @SerializedName("City")
     @Expose
-    private val city : City,
+    var city : City? = null
+        private set
 
     @SerializedName("Image")
     @Expose
-    private val photoURL : String,
+    var photoURL : String = ""
+        private set
 
     @SerializedName("Description")
     @Expose
-    private val description : String,
+    var description : String = ""
+        private set
 
     @SerializedName("Tags")
     @Expose
-    private val tags : ArrayList<Int>,
+    var tags : ArrayList<Int>? = null
+        private set
 
     @SerializedName("EventSubcribers")
     @Expose
-    private val eventSubcribers : Int
-) {}
+    var eventSubcribers : Int = 0
+        private set
+}

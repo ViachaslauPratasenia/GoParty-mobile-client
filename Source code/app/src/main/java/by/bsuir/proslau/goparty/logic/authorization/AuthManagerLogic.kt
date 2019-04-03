@@ -1,8 +1,9 @@
 package by.bsuir.proslau.goparty.logic.authorization
 
 import by.bsuir.proslau.goparty.db.autorization.AuthStore
+import by.bsuir.proslau.goparty.entity.authorization.AuthInfo
 import by.bsuir.proslau.goparty.entity.authorization.User
-import by.bsuir.proslau.goparty.server.authorization.ServerAnswer
+import by.bsuir.proslau.goparty.server.ServerAnswer
 import com.google.gson.Gson
 import by.bsuir.proslau.goparty.server.authorization.AuthApi
 import by.bsuir.proslau.goparty.server.authorization.AuthController

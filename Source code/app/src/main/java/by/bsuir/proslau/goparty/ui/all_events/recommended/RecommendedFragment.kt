@@ -9,14 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import by.bsuir.proslau.goparty.R
-import by.bsuir.proslau.goparty.logic.events.EventLogicManager
+import by.bsuir.proslau.goparty.logic.events.EventLogicManagerOld
 import by.bsuir.proslau.goparty.ui.all_events.AddEventActivity
 import by.bsuir.proslau.goparty.ui.all_events.Event
 import by.bsuir.proslau.goparty.ui.all_events.EventRecyclerViewAdapter
 
 class RecommendedFragment : Fragment() {
     internal lateinit var view: View
-    private val eventManager = EventLogicManager()
+    private val eventManager = EventLogicManagerOld()
     lateinit var adapter : EventRecyclerViewAdapter
     private var events : List<Event> = ArrayList()
 

@@ -1,9 +1,7 @@
-package by.bsuir.proslau.goparty.server.authorization
+package by.bsuir.proslau.goparty.server
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-
-
 
 class ServerAnswer {
     @SerializedName("success")
