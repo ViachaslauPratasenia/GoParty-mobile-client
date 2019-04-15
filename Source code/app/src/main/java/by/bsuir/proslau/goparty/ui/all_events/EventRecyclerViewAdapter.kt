@@ -14,7 +14,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import by.bsuir.proslau.goparty.R
+import by.bsuir.proslau.goparty.entity.Event
 import by.bsuir.proslau.goparty.logic.profile.ProfileForEventsImpl
+import by.bsuir.proslau.goparty.utils.Base64Converter
 import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 
@@ -28,21 +30,24 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<Event>, private 
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
         val currentItem = eventList[i]
-        val currentUser = ProfileForEventsImpl.getProfileById(currentItem.userId)
+        val currentUser = ProfileForEventsImpl.getProfileById(currentItem.userId!!)
         if (currentUser != null) {
-            Glide.with(context)
+            /*Glide.with(context)
                 .asBitmap()
                 .load(currentUser.avatar)
-                .into(viewHolder.profileAvatar)
+                .into(viewHolder.profileAvatar)*/
+            viewHolder.profileAvatar.setImageBitmap(Base64Converter.convertToBitmap(currentUser.avatar))
             viewHolder.profileName.text = currentUser.username
         }
         viewHolder.eventTitle.text = currentItem.title
         viewHolder.eventDate.text = currentItem.date
-        viewHolder.eventLocation.text = currentItem.location
-        Glide.with(context)
+        val location = "${currentItem.city.toString()}, ${currentItem.country.toString()}"
+        viewHolder.eventLocation.text = location
+        /*Glide.with(context)
             .asBitmap()
-            .load(currentItem.photo)
-            .into(viewHolder.eventPhoto)
+            .load(currentItem.photoURL)
+            .into(viewHolder.eventPhoto)*/
+        viewHolder.eventPhoto.setImageBitmap(Base64Converter.convertToBitmap(currentItem.photoURL))
         viewHolder.eventJoin.setOnClickListener {
             Toast.makeText(context, currentItem.title + " joined", Toast.LENGTH_SHORT).show()
         }

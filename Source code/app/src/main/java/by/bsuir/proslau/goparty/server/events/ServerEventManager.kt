@@ -5,7 +5,7 @@ import by.bsuir.proslau.goparty.server.RunnableWithObject
 import by.bsuir.proslau.goparty.server.TypeOfServerError
 
 interface ServerEventManager {
-    fun getEvents(from: Int, to: Int, onSuccess: RunnableWithObject<List<Event>>,
+    fun getEvents(from: Int, count: Int, onSuccess: RunnableWithObject<List<Event>>,
                   onFailure: RunnableWithObject<TypeOfServerError>)
 
     fun getEventsByTag(tag: String, onSuccess: RunnableWithObject<List<Event>>,

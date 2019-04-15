@@ -31,19 +31,19 @@ class EventLogicManager(context: Context) : EventManager {
         eventApi = EventController.getApi(authStore.token!!)
     }
 
-    fun getEventByPage(context: Context, page: Int, cityId: Int): List<Event>{
+    fun getEventByPage(context: Context, page: Int): List<Event>{
         if(page == 1){
-            return getAll(context, start, count, cityId)
+            return getAll(context, start, count)
         }
         //Ну вроде должно работать, логика тут такая = page 7 = 91-105 events
-        return getAll(context, count * (page - 1) + 1, count, cityId)
+        return getAll(context, count * (page - 1) + 1, count)
     }
 
-    override fun getAll(context: Context, start: Int, count: Int, cityId: Int): List<Event> {
+    override fun getAll(context: Context, start: Int, count: Int): List<Event> {
         val list = ArrayList<Event>()
-        eventApi.getEvents(start, count, cityId).enqueue(object : Callback<List<by.bsuir.proslau.goparty.entity.Event>> {
-            override fun onResponse(call: Call<List<by.bsuir.proslau.goparty.entity.Event>>,
-                                    response: Response<List<by.bsuir.proslau.goparty.entity.Event>>) {
+        eventApi.getEvents(start, count).enqueue(object : Callback<List<Event>> {
+            override fun onResponse(call: Call<List<Event>>,
+                                    response: Response<List<Event>>) {
                 if(checkError(response.code(), errorType)){
                     Toast.makeText(context, errorType, Toast.LENGTH_LONG).show()
                 }

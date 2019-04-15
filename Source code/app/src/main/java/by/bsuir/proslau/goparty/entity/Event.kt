@@ -5,12 +5,18 @@ import by.bsuir.proslau.goparty.entity.location.Country
 import by.bsuir.proslau.goparty.entity.location.Region
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.util.*
 
-class Event{
+class Event : Serializable{
     @SerializedName("UserId")
     @Expose
     var userId : UUID? = null
+        private set
+
+    @SerializedName("EventId")
+    @Expose
+    var eventId: UUID? = null
         private set
 
     @SerializedName("Title")

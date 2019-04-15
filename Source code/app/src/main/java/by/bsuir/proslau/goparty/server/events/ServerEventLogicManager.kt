@@ -23,11 +23,11 @@ class ServerEventLogicManager : ServerEventManager {
 
     override fun getEvents(
         from: Int,
-        to: Int,
+        count: Int,
         onSuccess: RunnableWithObject<List<Event>>,
         onFailure: RunnableWithObject<TypeOfServerError>
     ) {
-        eventApi.getEvents("$from-$to").enqueue(object : Callback<List<Event>> {
+        eventApi.getEvents(from, 15).enqueue(object : Callback<List<Event>> {
             override fun onResponse(call: Call<List<Event>>, response: Response<List<Event>>) {
                 checkError(response.code(), onFailure)
                 if (response.body() != null) {
