@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object AuthController {
-    internal val BASE_URL = "http://localhost:8008/"
+    internal val BASE_URL = "http://localhost:8081/"
     private var service: AuthApi? = null
 
     val api: AuthApi

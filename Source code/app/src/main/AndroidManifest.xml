@@ -12,8 +12,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:name=".App"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.all_events.AddEventActivity"></activity>
+        <activity android:name=".ui.all_events.AddEventActivity"/>
         <activity
             android:name=".ui.authorization.PasswordActivity"
             android:noHistory="true"

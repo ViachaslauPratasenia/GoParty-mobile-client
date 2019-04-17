@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import by.bsuir.proslau.goparty.R
 import by.bsuir.proslau.goparty.ui.all_events.AddEventActivity
 import by.bsuir.proslau.goparty.entity.Event
@@ -16,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_recommended.view.*
 
 class RecommendedFragment : Fragment() {
     internal lateinit var view: View
-    private val eventManager = EventLogicManager(context!!)
+    private val eventManager = EventLogicManager()
     lateinit var adapter : EventRecyclerViewAdapter
     private var events : List<Event> = ArrayList()
 
@@ -31,17 +32,20 @@ class RecommendedFragment : Fragment() {
 
         if(page == 1){
             initImageBitmaps()
+            initPage()
         }
 
         view.prev_button_rec.setOnClickListener {
             if(page > 1){
                 page--
+                initPage()
                 initImageBitmaps()
             }
         }
 
         view.next_button_rec.setOnClickListener {
             page++
+            initPage()
             initImageBitmaps()
         }
 
@@ -61,5 +65,9 @@ class RecommendedFragment : Fragment() {
         //val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_recommended)
         view.recycler_recommended.adapter = adapter
         view.recycler_recommended.layoutManager = LinearLayoutManager(context)
+    }
+
+    private fun initPage(){
+        view.page_number.text = page.toString()
     }
 }

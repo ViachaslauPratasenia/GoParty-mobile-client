@@ -16,7 +16,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class EventLogicManager(context: Context) : EventManager {
+class EventLogicManager : EventManager {
     @Volatile private var instance: EventLogicManager? = null
 
     private var eventApi: EventApi
@@ -53,7 +53,7 @@ class EventLogicManager(context: Context) : EventManager {
                 }
             }
             override fun onFailure(call: Call<List<by.bsuir.proslau.goparty.entity.Event>>, t: Throwable) {
-                Toast.makeText(context, TypeOfServerError.INTERNET_DOES_NOT_WORK.typeOfServerError, Toast.LENGTH_LONG).show()
+                Toast.makeText(context, TypeOfServerError.SERVER_ERROR.typeOfServerError, Toast.LENGTH_LONG).show()
             }
         })
         return list
