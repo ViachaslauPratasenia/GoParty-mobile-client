@@ -7,7 +7,7 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface EventApi{
-    @GET("/events")
+    @GET("/Events")
     fun getEvents(@Header("From") from: Int, @Header("Count") count: Int): Call<List<Event>>
 
     @GET("/events")

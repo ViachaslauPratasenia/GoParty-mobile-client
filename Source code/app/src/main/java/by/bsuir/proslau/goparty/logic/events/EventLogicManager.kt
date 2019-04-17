@@ -35,8 +35,8 @@ class EventLogicManager : EventManager {
         if(page == 1){
             return getAll(context, start, count)
         }
-        //Ну вроде должно работать, логика тут такая = page 7 = 91-105 events
-        return getAll(context, count * (page - 1) + 1, count)
+
+        return getAll(context, getStartPositionByPage(page, count), count)
     }
 
     override fun getAll(context: Context, start: Int, count: Int): List<Event> {
@@ -112,20 +112,28 @@ class EventLogicManager : EventManager {
         })
     }
 
-    private fun checkError(code: Int, error: String): Boolean {
-        when (code) {
-            404 -> {
-                error.plus(TypeOfServerError.INFO_IS_ABSENT.typeOfServerError)
-                return true
-            }
-            401 -> {
-                error.plus(TypeOfServerError.WRONG_CREDENTIALS.typeOfServerError)
-                return true
-            }
+    companion object {
+        fun getStartPositionByPage(page: Int, count: Int): Int{
+            return (count * (page - 1) + 1)
         }
-        if (code / 100 == 5) {
-            error.plus(TypeOfServerError.SERVER_ERROR.typeOfServerError)
+
+        fun checkError(code: Int, error: String): Boolean {
+            when (code) {
+                404 -> {
+                    error.plus(TypeOfServerError.INFO_IS_ABSENT.typeOfServerError)
+                    return true
+                }
+                401 -> {
+                    error.plus(TypeOfServerError.WRONG_CREDENTIALS.typeOfServerError)
+                    return true
+                }
+            }
+            if (code / 100 == 5) {
+                error.plus(TypeOfServerError.SERVER_ERROR.typeOfServerError)
+            }
+            return false
         }
-        return false
     }
+
+
 }

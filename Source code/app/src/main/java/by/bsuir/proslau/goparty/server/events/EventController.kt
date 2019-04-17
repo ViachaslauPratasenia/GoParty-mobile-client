@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object EventController {
-    val BASE_URL = "http://localhost:8081/"
+    val BASE_URL = "http://localhost:8081/api/"
     private var eventApi: EventApi? = null
 
     fun getApi(token: String): EventApi {
