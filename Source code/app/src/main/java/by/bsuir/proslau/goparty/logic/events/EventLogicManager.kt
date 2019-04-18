@@ -18,6 +18,7 @@ import retrofit2.Response
 
 class EventLogicManager : EventManager {
     @Volatile private var instance: EventLogicManager? = null
+    private val TAG = EventLogicManager::class.qualifiedName
 
     private var eventApi: EventApi
     private var authStore: AuthStore = AuthStore()

@@ -40,8 +40,8 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<Event>, private 
             viewHolder.profileName.text = currentUser.username
         }
         viewHolder.eventTitle.text = currentItem.title
-        viewHolder.eventDate.text = currentItem.date
-        val location = "${currentItem.city.toString()}, ${currentItem.country.toString()}"
+        viewHolder.eventDate.text = currentItem.startTime
+        val location = "${currentItem.location!!.city.toString()}, ${currentItem.location!!.country.toString()}"
         viewHolder.eventLocation.text = location
         /*Glide.with(context)
             .asBitmap()

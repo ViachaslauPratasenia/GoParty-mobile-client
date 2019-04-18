@@ -26,8 +26,8 @@ class EventDetailActivity : AppCompatActivity() {
         val event = intent.getSerializableExtra("event") as? Event
 
         event_detail_title.text = event!!.title
-        event_detail_date.text = event.date
-        val location = "${event.city.toString()}, ${event.country.toString()}"
+        event_detail_date.text = event.startTime
+        val location = "${event.location!!.city.toString()}, ${event.location!!.country.toString()}"
         event_detail_location.text = location
         event_detail_desc.text = event.description
         Glide.with(this)
