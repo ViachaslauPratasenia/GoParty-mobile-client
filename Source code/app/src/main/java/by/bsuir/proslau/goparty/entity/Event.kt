@@ -1,7 +1,9 @@
 package by.bsuir.proslau.goparty.entity
 
+import by.bsuir.proslau.goparty.entity.authorization.User
 import by.bsuir.proslau.goparty.entity.location.City
 import by.bsuir.proslau.goparty.entity.location.Country
+import by.bsuir.proslau.goparty.entity.location.Location
 import by.bsuir.proslau.goparty.entity.location.Region
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -14,12 +16,12 @@ class Event : Serializable{
     var userId : UUID? = null
         private set
 
-    @SerializedName("EventId")
+    @SerializedName("Id")
     @Expose
     var eventId: UUID? = null
         private set
 
-    @SerializedName("Title")
+    @SerializedName("Name")
     @Expose
     var title : String = ""
         private set
@@ -29,12 +31,21 @@ class Event : Serializable{
     var address : String = ""
         private set
 
-    @SerializedName("Date")
+    @SerializedName("StartTime")
     @Expose
-    var date : String = ""
+    var startTime : String = ""
         private set
 
-    @SerializedName("Country")
+    @SerializedName("Location")
+    @Expose
+    var location : Location? = null
+        private set
+
+    @SerializedName("CreatedBy")
+    @Expose
+    var user: User? = null
+
+    /*@SerializedName("Country")
     @Expose
     var country: Country? = null
         private set
@@ -47,7 +58,7 @@ class Event : Serializable{
     @SerializedName("City")
     @Expose
     var city : City? = null
-        private set
+        private set*/
 
     @SerializedName("Image")
     @Expose
@@ -64,7 +75,7 @@ class Event : Serializable{
     var tags : ArrayList<Int>? = null
         private set
 
-    @SerializedName("EventSubcribers")
+    @SerializedName("QuantityJoined")
     @Expose
     var eventSubcribers : Int = 0
         private set

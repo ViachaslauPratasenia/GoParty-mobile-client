@@ -9,15 +9,14 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Firebase" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a97cd4a7-adce-4356-857a-033d61f0a228" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/location/Location.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/by/bsuir/proslau/goparty/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/by/bsuir/proslau/goparty/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/Event.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/Event.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/events/EventLogicManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/events/EventLogicManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/server/events/EventApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/server/events/EventApi.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/server/events/EventController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/server/events/EventController.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +175,7 @@
           <entry key="Translations Editor" value="1" />
           <entry key="gradle" value="1" />
           <entry key="java" value="1" />
-          <entry key="kt" value="138" />
+          <entry key="kt" value="142" />
           <entry key="png" value="2" />
           <entry key="xml" value="8" />
         </counts>
@@ -187,35 +186,36 @@
           <entry key="Groovy" value="1" />
           <entry key="Image" value="2" />
           <entry key="JAVA" value="1" />
-          <entry key="Kotlin" value="138" />
+          <entry key="Kotlin" value="142" />
           <entry key="XML" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="kt" value="4071" />
-          <entry key="txt" value="133" />
+          <entry key="kt" value="4296" />
+          <entry key="txt" value="178" />
           <entry key="xml" value="159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Kotlin" value="4071" />
-          <entry key="PLAIN_TEXT" value="133" />
+          <entry key="Kotlin" value="4296" />
+          <entry key="PLAIN_TEXT" value="178" />
           <entry key="XML" value="159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.29" value="2" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.32" value="2" />
+          <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
     </session>
@@ -226,46 +226,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/lang/Thread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11679">
-              <caret line="744" selection-start-line="744" selection-end-line="744" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/ui/all_events/AddEventActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="46" selection-start-column="46" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/ui/all_events/recommended/RecommendedFragment.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/events/EventLogicManager.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1836">
-              <caret line="122" column="39" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
+            <state relative-caret-position="595">
+              <caret line="52" column="17" lean-forward="true" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/utils/Base64Converter.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/location/Location.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="27" />
+            <state relative-caret-position="34">
+              <caret line="2" column="79" lean-forward="true" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/Event.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/authorization/User.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-12">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/authorization/AuthInfo.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -282,7 +282,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/by/bsuir/proslau/goparty/ExampleInstrumentedTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
+            <state relative-caret-position="663">
               <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
             </state>
           </provider>
@@ -297,7 +297,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/server/events/EventApi.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -2723,7 +2723,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/authorization/AuthManager.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/db/autorization/AuthStore.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/authorization/AuthorizationErrors.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/authorization/AuthorizationErrors.kt" />
@@ -2752,7 +2751,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/events/ServerEventLogicManager.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/events/EventLogicManagerOld.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/server/events/ServerEventManager.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/Event.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/ui/all_events/ProfileForEvents.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/location/City.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/profile/ProfileForEventsImpl.kt" />
@@ -2770,10 +2768,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_recommended.xml" />
         <option value="$PROJECT_DIR$/app/src/test/java/by/bsuir/proslau/goparty/ExampleUnitTest.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/utils/Base64Converter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/events/EventLogicManager.kt" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/by/bsuir/proslau/goparty/ExampleInstrumentedTest.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/server/events/EventApi.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/server/events/EventController.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/events/EventLogicManager.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/location/Location.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/Event.kt" />
       </list>
     </option>
   </component>
@@ -2790,18 +2790,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Source code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Source code" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
@@ -2826,14 +2814,37 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="goparty" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Source code" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="goparty" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="authorization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Source code" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="goparty" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="location" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Source code" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="goparty" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Source code" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="goparty" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
               <item name="events" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2844,6 +2855,18 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Source code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Source code" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3167,7 +3190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555500969058</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added tests, modified network URL">
+      <created>1555544279482</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1555544279482</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3227,7 +3257,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50067115" side_tool="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49932885" visible="true" weight="0.23607038" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49932885" weight="0.23607038" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32697946" />
       <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.32885906" />
       <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32907802" />
@@ -3284,7 +3314,8 @@
     <MESSAGE value="Some logic for events added" />
     <MESSAGE value="Logic for events added" />
     <MESSAGE value="Local token added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Local token added" />
+    <MESSAGE value="Added tests, modified network URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests, modified network URL" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -3293,27 +3324,10 @@
     <state width="434" height="382" key="Git.Branch.Popup@1920.1080@120dpi" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/next.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/authorization/AuthInfo.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/authorization/User.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -3370,13 +3384,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/Event.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-335">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -3599,13 +3606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/events/EventLogicManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="122" column="39" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/utils/Base64Converter.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -3622,7 +3622,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/by/bsuir/proslau/goparty/ExampleInstrumentedTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="663">
           <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
         </state>
       </provider>
@@ -3645,6 +3645,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/logic/events/EventLogicManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="52" column="17" lean-forward="true" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/location/Location.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="79" lean-forward="true" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/authorization/AuthInfo.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/Event.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/by/bsuir/proslau/goparty/entity/authorization/User.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>

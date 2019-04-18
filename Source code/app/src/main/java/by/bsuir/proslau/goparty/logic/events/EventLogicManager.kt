@@ -52,7 +52,7 @@ class EventLogicManager : EventManager {
                     list.addAll(responseList)
                 }
             }
-            override fun onFailure(call: Call<List<by.bsuir.proslau.goparty.entity.Event>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Event>>, t: Throwable) {
                 Toast.makeText(context, TypeOfServerError.SERVER_ERROR.typeOfServerError, Toast.LENGTH_LONG).show()
             }
         })
