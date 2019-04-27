@@ -1,6 +1,7 @@
 package by.bsuir.proslau.goparty.logic.events
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import by.bsuir.proslau.goparty.R
 import by.bsuir.proslau.goparty.db.autorization.AuthStore
@@ -47,14 +48,19 @@ class EventLogicManager : EventManager {
                                     response: Response<List<Event>>) {
                 if(checkError(response.code(), errorType)){
                     Toast.makeText(context, errorType, Toast.LENGTH_LONG).show()
+                    Log.e("on response", "${response.code()} $errorType")
                 }
+                Log.e(TAG, response.body().toString())
                 if (response.body() != null) {
                     val responseList : List<Event> = response.body()!!
                     list.addAll(responseList)
+                    Log.e(TAG, "ok")
                 }
+                Log.e(TAG, "on response")
             }
             override fun onFailure(call: Call<List<Event>>, t: Throwable) {
                 Toast.makeText(context, TypeOfServerError.SERVER_ERROR.typeOfServerError, Toast.LENGTH_LONG).show()
+                Log.e("on failure", t.message)
             }
         })
         return list

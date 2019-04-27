@@ -1,5 +1,6 @@
 package by.bsuir.proslau.goparty.entity
 
+import by.bsuir.proslau.goparty.entity.authorization.ShortUser
 import by.bsuir.proslau.goparty.entity.authorization.User
 import by.bsuir.proslau.goparty.entity.location.City
 import by.bsuir.proslau.goparty.entity.location.Country
@@ -11,10 +12,10 @@ import java.io.Serializable
 import java.util.*
 
 class Event : Serializable{
-    @SerializedName("UserId")
+    /*@SerializedName("UserId")
     @Expose
     var userId : UUID? = null
-        private set
+        private set*/
 
     @SerializedName("Id")
     @Expose
@@ -43,7 +44,8 @@ class Event : Serializable{
 
     @SerializedName("CreatedBy")
     @Expose
-    var user: User? = null
+    var user: ShortUser? = null
+        private set
 
     /*@SerializedName("Country")
     @Expose

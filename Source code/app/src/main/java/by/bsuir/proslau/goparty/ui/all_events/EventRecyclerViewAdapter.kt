@@ -15,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import by.bsuir.proslau.goparty.R
 import by.bsuir.proslau.goparty.entity.Event
+import by.bsuir.proslau.goparty.entity.authorization.ShortUser
 import by.bsuir.proslau.goparty.logic.profile.ProfileForEventsImpl
 import by.bsuir.proslau.goparty.utils.Base64Converter
 import com.bumptech.glide.Glide
@@ -30,13 +31,13 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<Event>, private 
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
         val currentItem = eventList[i]
-        val currentUser = ProfileForEventsImpl.getProfileById(currentItem.userId!!)
+        val currentUser = currentItem.user
         if (currentUser != null) {
             /*Glide.with(context)
                 .asBitmap()
                 .load(currentUser.avatar)
                 .into(viewHolder.profileAvatar)*/
-            viewHolder.profileAvatar.setImageBitmap(Base64Converter.convertToBitmap(currentUser.avatar))
+            viewHolder.profileAvatar.setImageBitmap(Base64Converter.convertToBitmap(currentUser.image))
             viewHolder.profileName.text = currentUser.username
         }
         viewHolder.eventTitle.text = currentItem.title
@@ -63,7 +64,7 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<Event>, private 
         }
     }
 
-    private fun startActivityWithData(currentUser : ProfileForEvents, currentEvent : Event ){
+    private fun startActivityWithData(currentUser : ShortUser, currentEvent : Event ){
         val intent = Intent(context, EventDetailActivity::class.java)
         intent.putExtra("event", currentEvent)
         intent.putExtra("user", currentUser)
@@ -72,6 +73,12 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<Event>, private 
 
     override fun getItemCount(): Int {
         return eventList.size
+    }
+
+    fun setData(list: List<Event>){
+        eventList.clear()
+        eventList.addAll(list)
+        notifyDataSetChanged()
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
