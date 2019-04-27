@@ -1,53 +1,84 @@
 package by.bsuir.proslau.goparty.entity
 
+import by.bsuir.proslau.goparty.entity.authorization.ShortUser
+import by.bsuir.proslau.goparty.entity.authorization.User
 import by.bsuir.proslau.goparty.entity.location.City
 import by.bsuir.proslau.goparty.entity.location.Country
+import by.bsuir.proslau.goparty.entity.location.Location
 import by.bsuir.proslau.goparty.entity.location.Region
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+import java.util.*
 
-class Event(
-    @SerializedName("UserId")
+class Event : Serializable{
+    /*@SerializedName("UserId")
     @Expose
-    private val userId : Long,
+    var userId : UUID? = null
+        private set*/
 
-    @SerializedName("Title")
+    @SerializedName("Id")
     @Expose
-    private val title : String,
+    var eventId: UUID? = null
+        private set
+
+    @SerializedName("Name")
+    @Expose
+    var title : String = ""
+        private set
 
     @SerializedName("Address")
     @Expose
-    private val address : String,
+    var address : String = ""
+        private set
 
-    @SerializedName("Date")
+    @SerializedName("StartTime")
     @Expose
-    private val date : String,
+    var startTime : String = ""
+        private set
 
-    @SerializedName("Country")
+    @SerializedName("Location")
     @Expose
-    private val country: Country,
+    var location : Location? = null
+        private set
+
+    @SerializedName("CreatedBy")
+    @Expose
+    var user: ShortUser? = null
+        private set
+
+    /*@SerializedName("Country")
+    @Expose
+    var country: Country? = null
+        private set
 
     @SerializedName("Region")
     @Expose
-    private val region: Region,
+    var region: Region? = null
+        private set
 
     @SerializedName("City")
     @Expose
-    private val city : City,
+    var city : City? = null
+        private set*/
 
     @SerializedName("Image")
     @Expose
-    private val photoURL : String,
+    var photoURL : String = ""
+        private set
 
     @SerializedName("Description")
     @Expose
-    private val description : String,
+    var description : String = ""
+        private set
 
     @SerializedName("Tags")
     @Expose
-    private val tags : ArrayList<Int>,
+    var tags : ArrayList<Int>? = null
+        private set
 
-    @SerializedName("EventSubcribers")
+    @SerializedName("QuantityJoined")
     @Expose
-    private val eventSubcribers : Int
-) {}
+    var eventSubcribers : Int = 0
+        private set
+}

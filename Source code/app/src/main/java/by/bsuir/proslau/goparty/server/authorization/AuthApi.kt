@@ -1,7 +1,8 @@
 package by.bsuir.proslau.goparty.server.authorization
 
 import by.bsuir.proslau.goparty.entity.authorization.User
-import by.bsuir.proslau.goparty.logic.authorization.AuthInfo
+import by.bsuir.proslau.goparty.entity.authorization.AuthInfo
+import by.bsuir.proslau.goparty.server.ServerAnswer
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST

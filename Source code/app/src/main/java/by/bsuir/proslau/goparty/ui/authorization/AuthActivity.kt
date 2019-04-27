@@ -31,9 +31,9 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_auth)
 
         btn_login.setOnClickListener {
-            attemptLogin()
-            /*val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)*/
+            //attemptLogin()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
         login_tv_create_account.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)

@@ -1,4 +1,4 @@
-package by.bsuir.proslau.goparty.logic.authorization
+package by.bsuir.proslau.goparty.entity.authorization
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
