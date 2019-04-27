@@ -22,4 +22,8 @@
     <string name="location">Location</string>
     <string name="add_photo">Add photo</string>
     <string name="add_event">Add event</string>
+    <string name="empty_field">Empty field</string>
+    <string name="add_event_success">Event added successfully</string>
+    <string name="delete_event_success">Event deleted successfully</string>
+    <string name="page">Page</string>
 </resources>
