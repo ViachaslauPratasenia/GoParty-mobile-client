@@ -15,6 +15,15 @@ class LocalStore {
             return gson.fromJson(json, UserLocal::class.java)
         }
 
+    val userId: Int?
+        get() = preferences.getInt(SAVED_ID, 0)
+
+    fun saveUserId(userId: Int){
+        val editor = preferences.edit()
+        editor.putInt(SAVED_ID, userId)
+        editor.apply()
+    }
+
     fun saveUser(user: UserLocal) {
         val editor = preferences.edit()
         val gson = Gson()
@@ -25,5 +34,6 @@ class LocalStore {
 
     companion object {
         private const val SAVED_USER = "saved_user"
+        private const val SAVED_ID = "saved_id"
     }
 }

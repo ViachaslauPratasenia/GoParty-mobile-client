@@ -38,7 +38,7 @@ class AuthActivity : AppCompatActivity() {
             if(UserRepository(context = applicationContext).isUserValid(inputLoginNickname.text.toString(),
                     inputLoginPassword.text.toString())){
                 val user = UserRepository(this).findUser(inputLoginNickname.text.toString())
-                locatStore.saveUser(user)
+                locatStore.saveUserId(user.id)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
