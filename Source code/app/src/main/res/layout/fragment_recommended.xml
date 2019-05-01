@@ -19,18 +19,18 @@
         android:id="@+id/recommended_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/btn_add"
         app:backgroundTint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_recommended"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="40dp"
         android:background="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,8 +63,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/page"
                 android:gravity="center_vertical|center_horizontal"
+                android:text="@string/page"
                 android:textColor="@android:color/white"
                 android:textSize="30sp" />
 
@@ -73,10 +73,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:textSize="30sp"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="N" />
+                android:text="N"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <Button

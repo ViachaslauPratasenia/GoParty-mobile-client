@@ -16,12 +16,13 @@ import by.bsuir.proslau.goparty.db.local.EventRepository
 import by.bsuir.proslau.goparty.ui.all_events.AddEventActivity
 import by.bsuir.proslau.goparty.entity.local.EventLocal
 import by.bsuir.proslau.goparty.logic.events.EventLogicManager
+import by.bsuir.proslau.goparty.logic.local.events.EventLocalManager
 import by.bsuir.proslau.goparty.ui.all_events.EventRecyclerViewAdapter
 import kotlinx.android.synthetic.main.fragment_recommended.view.*
 
 class RecommendedFragment : Fragment() {
     internal lateinit var view: View
-    private val eventManager = EventLogicManager()
+    //private val eventManager = EventLogicManager()
     lateinit var adapter: EventRecyclerViewAdapter
     private var events: List<EventLocal> = ArrayList()
     private var page = 1
@@ -35,39 +36,35 @@ class RecommendedFragment : Fragment() {
 
         if (page == 1) {
             initPage()
-            initImageBitmaps()
-            /*val eventListTask = EventListTask()
-            eventListTask.execute()*/
-            //MyTask().execute()
-
+            initRecommendedRecyclerView()
+            events = EventLocalManager.getEventsByPage(page)
+            adapter.setData(events)
         }
 
-        /*view.prev_button_rec.setOnClickListener {
+        view.prev_button_rec.setOnClickListener {
             if (page > 1) {
                 page--
-                *//*initPage()
-                initImageBitmaps()*//*
-                *//*val eventListTask = EventListTask()
-                eventListTask.execute()*//*
+                events = EventLocalManager.getEventsByPage(page)
+                adapter.setData(events)
+                initPage()
             }
         }
 
         view.next_button_rec.setOnClickListener {
             page++
-            *//*initPage()
-            initImageBitmaps()*//*
-        }*/
+            events = EventLocalManager.getEventsByPage(page)
+            if(!events.isEmpty()){
+
+                adapter.setData(events)
+                initPage()
+            }
+
+        }
 
         return view
     }
 
-    private fun initImageBitmaps() {
-        //events = eventManager.getEventByPage(context!!, page)
-        events = EventRepository(context!!).findAll()
-        initCategoriesRecyclerView()
-    }
-
-    private fun initCategoriesRecyclerView() {
+    private fun initRecommendedRecyclerView() {
         adapter = EventRecyclerViewAdapter(
             events as java.util.ArrayList<EventLocal>,
             context!!

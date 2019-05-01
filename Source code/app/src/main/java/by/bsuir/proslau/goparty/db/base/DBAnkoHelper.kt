@@ -7,11 +7,13 @@ import android.graphics.BitmapFactory
 import by.bsuir.proslau.goparty.App
 import by.bsuir.proslau.goparty.App.Companion.context
 import by.bsuir.proslau.goparty.R
+import by.bsuir.proslau.goparty.entity.local.EventLocal
+import by.bsuir.proslau.goparty.entity.local.UserLocal
 import by.bsuir.proslau.goparty.utils.DatabaseArrayConverter
 import by.bsuir.proslau.goparty.utils.StorageUtils
 import org.jetbrains.anko.db.*
 
-class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v17", null, 1) {
+class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v20", null, 1) {
 
     companion object {
         private var instance: DBAnkoHelper? = null
@@ -62,7 +64,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v17", 
             )
 
         database.insert("users",
-            "id" to 1,
+            "id" to UserLocal.counter++,
             "email" to "slavaprot14@gmail.com",
             "username" to "proslau",
             "name" to "Viachaslau",
@@ -84,7 +86,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v17", 
             )
 
         database.insert("users",
-            "id" to 2,
+            "id" to UserLocal.counter++,
             "email" to "skatrr4@gmail.com",
             "username" to "vitaly",
             "name" to "Vitaliy",
@@ -104,7 +106,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v17", 
             "skype" to "vitaliy_pankov")
 
         database.insert("events",
-            "id" to 1,
+            "id" to EventLocal.counter++,
             "createdBy" to 1,
             "name" to "Football Match 1",
             "address" to "Vanda Metropolitano",
@@ -123,7 +125,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v17", 
             )
 
         database.insert("events",
-            "id" to 2,
+            "id" to EventLocal.counter++,
             "createdBy" to 2,
             "name" to "Football Match 2",
             "address" to "Vanda Metropolitano",
@@ -141,8 +143,252 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v17", 
             "subscribersId" to DatabaseArrayConverter.convertToString("event 2", arrayListOf(1))
         )
 
-        //addUsers(App.context)
-        //addEvents(App.context)
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 1,
+            "name" to "Football Match 3",
+            "address" to "Vanda Metropolitano",
+            "startTime" to "August 1, 9:00",
+            "location" to "Madrid, Spain",
+            "description" to "Description football match",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.wanda),
+                "Football Match 3"
+            ),
+            "tags" to 3,
+            "eventSubscribers" to 2,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 3", arrayListOf(1,2))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 1,
+            "name" to "Football Match 4",
+            "address" to "Vanda Metropolitano",
+            "startTime" to "August 5, 19:00",
+            "location" to "Madrid, Spain",
+            "description" to "Description football match",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.wanda),
+                "Football Match 4"
+            ),
+            "tags" to 3,
+            "eventSubscribers" to 2,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 4", arrayListOf(1,2))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 2,
+            "name" to "Football Match 5",
+            "address" to "Vanda Metropolitano",
+            "startTime" to "August 6, 19:00",
+            "location" to "Madrid, Spain",
+            "description" to "Description football match",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.wanda),
+                "Football Match 5"
+            ),
+            "tags" to 3,
+            "eventSubscribers" to 0,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 5", arrayListOf())
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 2,
+            "name" to "Football Match 6",
+            "address" to "Vanda Metropolitano",
+            "startTime" to "August 9, 22:00",
+            "location" to "Madrid, Spain",
+            "description" to "Description football match",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.wanda),
+                "Football Match 6"
+            ),
+            "tags" to 3,
+            "eventSubscribers" to 2,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 6", arrayListOf(1,2))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 2,
+            "name" to "Football Match 7",
+            "address" to "Vanda Metropolitano",
+            "startTime" to "August 12, 22:00",
+            "location" to "Madrid, Spain",
+            "description" to "Description football match",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.wanda),
+                "Football Match 7"
+            ),
+            "tags" to 3,
+            "eventSubscribers" to 1,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 7", arrayListOf(1))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 2,
+            "name" to "Endgame 1",
+            "address" to "Cinema Belarus",
+            "startTime" to "April 28, 23:59",
+            "location" to "Minsk, Belarus",
+            "description" to "Description the avengers",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.endgame),
+                "Endgame 1"
+            ),
+            "tags" to 2,
+            "eventSubscribers" to 1,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 8", arrayListOf(2))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 1,
+            "name" to "Endgame 2",
+            "address" to "Cinema Aurora",
+            "startTime" to "April 28, 23:59",
+            "location" to "Minsk, Belarus",
+            "description" to "Description the avengers",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.endgame),
+                "Endgame 2"
+            ),
+            "tags" to 2,
+            "eventSubscribers" to 2,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 9", arrayListOf(1,2))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 1,
+            "name" to "Endgame 3",
+            "address" to "Cinema Aurora",
+            "startTime" to "April 29, 11:00",
+            "location" to "Minsk, Belarus",
+            "description" to "Description the avengers",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.endgame),
+                "Endgame 3"
+            ),
+            "tags" to 2,
+            "eventSubscribers" to 2,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 10", arrayListOf(1,2))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 1,
+            "name" to "Endgame 4",
+            "address" to "Cinema Belarus",
+            "startTime" to "April 29, 17:00",
+            "location" to "Minsk, Belarus",
+            "description" to "Description the avengers",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.endgame),
+                "Endgame 4"
+            ),
+            "tags" to 2,
+            "eventSubscribers" to 1,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 11", arrayListOf(1))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 1,
+            "name" to "Endgame 5",
+            "address" to "Cinema Belarus",
+            "startTime" to "April 29, 19:00",
+            "location" to "Minsk, Belarus",
+            "description" to "Description the avengers",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.endgame),
+                "Endgame 5"
+            ),
+            "tags" to 2,
+            "eventSubscribers" to 1,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 12", arrayListOf(1))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 1,
+            "name" to "Sasha Solodukha 1",
+            "address" to "Dynamo",
+            "startTime" to "July 24, 18:00",
+            "location" to "Minsk, Belarus",
+            "description" to "Description the avengers",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.sasha),
+                "Sasha Solodukha 1"
+            ),
+            "tags" to 4,
+            "eventSubscribers" to 2,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 13", arrayListOf(1,2))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 2,
+            "name" to "Sasha Solodukha 2",
+            "address" to "Dynamo",
+            "startTime" to "July 28, 18:00",
+            "location" to "Minsk, Belarus",
+            "description" to "Description the avengers",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.sasha),
+                "Sasha Solodukha 2"
+            ),
+            "tags" to 4,
+            "eventSubscribers" to 2,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 14", arrayListOf(1,2))
+        )
+
+        database.insert("events",
+            "id" to EventLocal.counter++,
+            "createdBy" to 2,
+            "name" to "Sasha Solodukha 3",
+            "address" to "Dynamo",
+            "startTime" to "August 25, 18:00",
+            "location" to "Minsk, Belarus",
+            "description" to "Description the avengers",
+            //"image" to context.resources.getString(R.string.vanda),
+            //"image" to context.resources.getString(R.string.endgame),
+            "image" to StorageUtils.saveToInternalStorage(
+                BitmapFactory.decodeResource(context.resources, R.drawable.sasha),
+                "Sasha Solodukha 3"
+            ),
+            "tags" to 4,
+            "eventSubscribers" to 2,
+            "subscribersId" to DatabaseArrayConverter.convertToString("event 15", arrayListOf(1,2))
+        )
     }
 
     override fun onUpgrade(database: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
