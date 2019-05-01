@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.Toast
 import by.bsuir.proslau.goparty.R
 import by.bsuir.proslau.goparty.entity.Event
+import by.bsuir.proslau.goparty.entity.local.EventLocal
+import by.bsuir.proslau.goparty.entity.local.UserLocal
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_event_detail.*
 
@@ -22,24 +24,24 @@ class EventDetailActivity : AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
         actionBar?.setDisplayShowHomeEnabled(true)
 
-        val user = intent.getSerializableExtra("user") as? ProfileForEvents
-        val event = intent.getSerializableExtra("event") as? Event
+        val user = intent.getSerializableExtra("user") as? UserLocal
+        val event = intent.getSerializableExtra("event") as? EventLocal
 
-        event_detail_title.text = event!!.title
+        event_detail_title.text = event!!.name
         event_detail_date.text = event.startTime
-        val location = "${event.location!!.city.toString()}, ${event.location!!.country.toString()}"
+        val location = "${event.address}, ${event.location}"
         event_detail_location.text = location
         event_detail_desc.text = event.description
         Glide.with(this)
             .asBitmap()
-            .load(event.photoURL)
+            .load(event.image + "/${event.name}.jpg")
             .into(event_detail_image)
         Glide.with(this)
             .asBitmap()
-            .load(user!!.avatar)
+            .load(user!!.image + "/${user.username}.jpg")
             .into(event_detail_org_avatar)
         event_detail_organ.text = user.username
-        event_detail_quantity.text = event.eventSubcribers.toString()
+        event_detail_quantity.text = event.eventSubscribers.toString()
 
         btn_event_detail_message.setOnClickListener {
             Toast.makeText(this, "Message button", Toast.LENGTH_SHORT).show()

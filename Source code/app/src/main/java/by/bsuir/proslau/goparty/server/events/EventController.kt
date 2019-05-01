@@ -29,8 +29,8 @@ object EventController {
             override fun intercept(chain: Interceptor.Chain): Response {
                 val original = chain.request()
                 val request = original.newBuilder()
-                    //.header("Authorization", token)
-                    .header("Authorization", "1234567890")
+                    .header("Authorization", token)
+                    //.header("Authorization", "1234567890")
                     .addHeader("Content-Type", "application/json")
                     .build()
                 return chain.proceed(request)

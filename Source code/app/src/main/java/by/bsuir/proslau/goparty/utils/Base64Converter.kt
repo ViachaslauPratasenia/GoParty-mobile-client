@@ -11,7 +11,7 @@ class Base64Converter {
     companion object {
         fun convertToBase64(bitmap: Bitmap): String{
             val baos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 75, baos)
             val imageBytes = baos.toByteArray()
             return Base64.encodeToString(imageBytes, Base64.DEFAULT)
         }
