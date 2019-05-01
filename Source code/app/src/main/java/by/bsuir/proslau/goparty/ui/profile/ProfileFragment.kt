@@ -9,8 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import by.bsuir.proslau.goparty.App
 import by.bsuir.proslau.goparty.R
+import by.bsuir.proslau.goparty.db.local.LocalStore
+import by.bsuir.proslau.goparty.db.local.UserRepository
 import by.bsuir.proslau.goparty.ui.authorization.AuthActivity
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 class ProfileFragment : Fragment() {
 
@@ -26,7 +32,17 @@ class ProfileFragment : Fragment() {
     lateinit var editActivityIntent : Intent
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+
         val profileView = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val user = UserRepository(App.context).findUser(LocalStore().userId!!)
+        Glide.with(this)
+            .asBitmap()
+            .load(user.image + "/${user.username}.jpg")
+            .into(profileView.profile_avatar)
+
+        profileView.profile_name.text = "${user.name} ${user.surname}"
 
         val locationView = profileView.findViewById<View>(R.id.card_view_location) as CardView
         val emailView = profileView.findViewById<View>(R.id.card_view_email) as CardView

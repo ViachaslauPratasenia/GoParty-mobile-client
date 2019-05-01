@@ -4,6 +4,7 @@
     package="by.bsuir.proslau.goparty">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,11 +19,9 @@
         <activity android:name=".ui.all_events.AddEventActivity"/>
         <activity
             android:name=".ui.authorization.PasswordActivity"
-            android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.authorization.RegisterActivity"
-            android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.profile.ProfileEditActivity"
