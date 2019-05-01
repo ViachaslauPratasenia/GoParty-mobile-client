@@ -13,7 +13,7 @@ import by.bsuir.proslau.goparty.utils.DatabaseArrayConverter
 import by.bsuir.proslau.goparty.utils.StorageUtils
 import org.jetbrains.anko.db.*
 
-class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v20", null, 1) {
+class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v21", null, 1) {
 
     companion object {
         private var instance: DBAnkoHelper? = null
@@ -74,7 +74,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v20", 
             "image" to StorageUtils.saveToInternalStorage(
                 BitmapFactory.decodeResource(context.resources, R.drawable.me),
                 "proslau"),
-            "eventsID" to DatabaseArrayConverter.convertToString("user 1", arrayListOf(1,2,3,4,6,7,8,9,10,11,12)),
+            "eventsId" to DatabaseArrayConverter.convertToString("user 1", arrayListOf(1,2,3,4,6,7,8,9,10,11,12)),
             "password" to "123",
             "isModer" to 1,
             "phone" to "+375445712877",
@@ -95,7 +95,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v20", 
             "image" to StorageUtils.saveToInternalStorage(
                 BitmapFactory.decodeResource(context.resources, R.drawable.vitaly),
                 "vitaly"),
-            "eventsID" to DatabaseArrayConverter.convertToString("user 2", arrayListOf(1,3,4,6,10,11,12)),
+            "eventsId" to DatabaseArrayConverter.convertToString("user 2", arrayListOf(1,3,4,6,10,11,12)),
             "password" to "test",
             "isModer" to 0,
             "phone" to "+37544",

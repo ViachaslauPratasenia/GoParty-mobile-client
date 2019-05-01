@@ -74,7 +74,7 @@ class UserRepository(val context: Context) {
             "surname" to user.surname,
             "location" to user.location,
             "image" to user.image,
-            "events_id" to DatabaseArrayConverter.convertToString("user ${user.id}", user.eventsId),
+            "eventsId" to DatabaseArrayConverter.convertToString("user ${user.id}", user.eventsId),
             "password" to user.password,
             "isModer" to user.isModer,
             "phone" to user.phone,
@@ -87,7 +87,7 @@ class UserRepository(val context: Context) {
     }
 
     fun update(user: UserLocal) = context.database.use {
-        update("users",
+        val updateResult = update("users",
             "id" to user.id,
             "email" to user.email,
             "username" to user.username,
@@ -95,7 +95,7 @@ class UserRepository(val context: Context) {
             "surname" to user.surname,
             "location" to user.location,
             "image" to user.image,
-            "events_id" to user.eventsId,
+            "eventsId" to DatabaseArrayConverter.convertToString("user ${user.id}", user.eventsId),
             "password" to user.password,
             "isModer" to user.isModer,
             "phone" to user.phone,
@@ -104,7 +104,7 @@ class UserRepository(val context: Context) {
             "ok" to user.ok,
             "telegram" to user.telegram,
             "skype" to user.skype)
-            .whereArgs("id = {userId}", "userId" to user.id)
+            .whereArgs("id = ${user.id}")
             .exec()
     }
 
