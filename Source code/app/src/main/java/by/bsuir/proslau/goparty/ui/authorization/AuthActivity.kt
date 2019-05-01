@@ -8,10 +8,13 @@ import by.bsuir.proslau.goparty.R
 import by.bsuir.proslau.goparty.logic.authorization.AuthManagerLogic
 import kotlinx.android.synthetic.main.activity_auth.*
 import android.widget.Toast
+import by.bsuir.proslau.goparty.db.local.LocalStore
+import by.bsuir.proslau.goparty.db.local.UserRepository
 import by.bsuir.proslau.goparty.logic.authorization.RunnableWithError
 
 class AuthActivity : AppCompatActivity() {
     private val authManager = AuthManagerLogic()
+    private val locatStore = LocalStore()
 
     private val onSuccess = Runnable {
         val intent = Intent(this, MainActivity::class.java)
@@ -32,8 +35,14 @@ class AuthActivity : AppCompatActivity() {
 
         btn_login.setOnClickListener {
             //attemptLogin()
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            if(UserRepository(context = applicationContext).isUserValid(inputLoginNickname.text.toString(),
+                    inputLoginPassword.text.toString())){
+                val user = UserRepository(this).findUser(inputLoginNickname.text.toString())
+                locatStore.saveUser(user)
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+
         }
         login_tv_create_account.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
