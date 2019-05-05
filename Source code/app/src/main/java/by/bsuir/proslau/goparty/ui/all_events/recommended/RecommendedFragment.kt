@@ -1,5 +1,6 @@
 package by.bsuir.proslau.goparty.ui.all_events.recommended
 
+import android.app.Activity.RESULT_OK
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
@@ -11,7 +12,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import by.bsuir.proslau.goparty.App
 import by.bsuir.proslau.goparty.R
+import by.bsuir.proslau.goparty.db.base.addEvents
 import by.bsuir.proslau.goparty.db.local.EventRepository
 import by.bsuir.proslau.goparty.ui.all_events.AddEventActivity
 import by.bsuir.proslau.goparty.entity.local.EventLocal
@@ -24,15 +28,19 @@ class RecommendedFragment : Fragment() {
     internal lateinit var view: View
     //private val eventManager = EventLogicManager()
     lateinit var adapter: EventRecyclerViewAdapter
-    private var events: List<EventLocal> = ArrayList()
-    private var page = 1
+    var events: List<EventLocal> = ArrayList()
+    var page = 1
+
+    val REQUEST_ADD_EVENT = 1
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_recommended, container, false)
         view.recommended_fab.setOnClickListener {
             val intent = Intent(view.context, AddEventActivity::class.java)
-            startActivity(intent)
+            startActivityForResult(intent, REQUEST_ADD_EVENT)
         }
+
+        Toast.makeText(App.context, "Check your internet connection", Toast.LENGTH_SHORT).show()
 
         if (page == 1) {
             initPage()
@@ -76,5 +84,18 @@ class RecommendedFragment : Fragment() {
 
     private fun initPage() {
         view.page_number.text = page.toString()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_ADD_EVENT) {
+            if (resultCode == RESULT_OK) {
+                val isEventAdded = data!!.getBooleanExtra("isEventAdded", false)
+                if (isEventAdded) {
+                    events = EventLocalManager.getEventsByPage(page)
+                    adapter.setData(events)
+                }
+            }
+        }
     }
 }

@@ -29,7 +29,7 @@ class EventDetailActivity : AppCompatActivity() {
 
         event_detail_title.text = event!!.name
         event_detail_date.text = event.startTime
-        val location = "${event.address}, ${event.location}"
+        val location = "${event.address} ${event.location}"
         event_detail_location.text = location
         event_detail_desc.text = event.description
         Glide.with(this)

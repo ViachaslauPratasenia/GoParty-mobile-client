@@ -26,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
     val PICK_IMAGE = 1
 
     companion object {
-        var counter = 7
+        var counter = 3
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         val newUser = UserLocal(
-            counter++, "", "", "", "", "", "", ArrayList(),
+            ++counter, "", "", "", "", "", "", ArrayList(),
             "", 0, "", "", "", "", "", ""
         )
 
