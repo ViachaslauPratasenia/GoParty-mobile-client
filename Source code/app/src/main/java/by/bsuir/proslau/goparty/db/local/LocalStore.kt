@@ -24,6 +24,15 @@ class LocalStore {
         editor.apply()
     }
 
+    var eventsCounter: Int? = 0
+        get() = preferences.getInt(SAVED_COUNTER, 0)
+
+    fun saveEventsCounter(counter: Int){
+        val editor = preferences.edit()
+        editor.putInt(SAVED_COUNTER, counter)
+        editor.apply()
+    }
+
     fun saveUser(user: UserLocal) {
         val editor = preferences.edit()
         val gson = Gson()
@@ -35,5 +44,6 @@ class LocalStore {
     companion object {
         private const val SAVED_USER = "saved_user"
         private const val SAVED_ID = "saved_id"
+        private const val SAVED_COUNTER = "saved_counter"
     }
 }

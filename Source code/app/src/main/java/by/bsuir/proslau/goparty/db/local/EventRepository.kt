@@ -1,6 +1,7 @@
 package by.bsuir.proslau.goparty.db.local
 
 import android.content.Context
+import android.util.Log
 import by.bsuir.proslau.goparty.db.base.database
 import by.bsuir.proslau.goparty.entity.local.EventLocal
 import by.bsuir.proslau.goparty.utils.DatabaseArrayConverter
@@ -32,6 +33,7 @@ class EventRepository(val context: Context) {
                         tags.toString().toInt(), eventSubscribers.toString().toInt(),DatabaseArrayConverter
                             .convertToArray(subscribersId.toString(), "eventArray"))
                     notes.add(note)
+                    Log.e("repository", "note ${note.name} find")
                     return notes
                 }
             })
@@ -64,6 +66,7 @@ class EventRepository(val context: Context) {
                         tags.toString().toInt(), eventSubscribers.toString().toInt(),DatabaseArrayConverter
                             .convertToArray(subscribersId.toString(), "eventArray"))
                     notes.add(note)
+
                     return notes
                 }
             })
@@ -107,11 +110,13 @@ class EventRepository(val context: Context) {
             "address" to event.address,
             "startTime" to event.startTime,
             "location" to event.location,
+            "description" to event.description,
             "image" to event.image,
             "tags" to event.tags,
             "eventSubscribers" to event.eventSubscribers,
             "subscribersId" to DatabaseArrayConverter.convertToString("event ${event.id}", event.subscribersId)
         )
+        Log.e("insert", "${event.id} is created")
     }
 
     fun update(event: EventLocal) = context.database.use {
@@ -122,6 +127,7 @@ class EventRepository(val context: Context) {
             "address" to event.address,
             "startTime" to event.startTime,
             "location" to event.location,
+            "description" to event.description,
             "image" to event.image,
             "tags" to event.tags,
             "eventSubscribers" to event.eventSubscribers,

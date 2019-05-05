@@ -99,6 +99,8 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<EventLocal>, pri
         viewHolder.constraintLayout.setOnClickListener {
             startActivityWithData(currentUser, currentItem)
         }
+
+        Log.e("adapter", "event ${currentItem.id} is displayed")
     }
 
     private fun startActivityWithData(currentUser : UserLocal, currentEvent : EventLocal ){
@@ -110,6 +112,11 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<EventLocal>, pri
 
     override fun getItemCount(): Int {
         return eventList.size
+    }
+
+    fun addEvent(event: EventLocal){
+        eventList.add(event)
+        notifyDataSetChanged()
     }
 
     fun setData(list: List<EventLocal>){
