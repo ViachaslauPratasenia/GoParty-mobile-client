@@ -37,7 +37,8 @@ class UserRepository(val context: Context) {
 
                     val note = UserLocal(id.toString().toInt(), email.toString(), nickname.toString(),
                         name.toString(), surname.toString(), location.toString(), image.toString(),
-                        DatabaseArrayConverter.convertToArray(eventsId.toString(), "userArray"),
+                        //DatabaseArrayConverter.convertToArray(eventsId.toString(), "user ${id.toString().toInt()}"),
+                         DatabaseArrayConverter.jsonToArray(eventsId.toString()),
                         password.toString(), isModer.toString().toInt(), phone.toString(), vk.toString(),
                         facebook.toString(), ok.toString(), telegram.toString(), skype.toString())
                     notes.add(note)
