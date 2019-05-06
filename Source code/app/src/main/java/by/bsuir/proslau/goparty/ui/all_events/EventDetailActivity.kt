@@ -1,5 +1,6 @@
 package by.bsuir.proslau.goparty.ui.all_events
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.ActionBar
@@ -10,6 +11,7 @@ import by.bsuir.proslau.goparty.R
 import by.bsuir.proslau.goparty.entity.Event
 import by.bsuir.proslau.goparty.entity.local.EventLocal
 import by.bsuir.proslau.goparty.entity.local.UserLocal
+import by.bsuir.proslau.goparty.ui.sideusers.SideUserActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_event_detail.*
 
@@ -42,6 +44,13 @@ class EventDetailActivity : AppCompatActivity() {
             .into(event_detail_org_avatar)
         event_detail_organ.text = user.username
         event_detail_quantity.text = event.eventSubscribers.toString()
+
+        event_detail_quantity_layout.setOnClickListener {
+            Toast.makeText(this, "side user is called", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, SideUserActivity::class.java)
+            intent.putExtra("currentEvent", event)
+            startActivity(intent)
+        }
 
         btn_event_detail_message.setOnClickListener {
             Toast.makeText(this, "Message button", Toast.LENGTH_SHORT).show()

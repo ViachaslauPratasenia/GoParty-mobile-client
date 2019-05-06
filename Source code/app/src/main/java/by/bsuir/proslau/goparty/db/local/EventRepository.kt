@@ -30,8 +30,9 @@ class EventRepository(val context: Context) {
                     val note = EventLocal(id.toString().toInt(), createdBy.toString().toInt(),
                         name.toString(), address.toString(), startTime.toString(),
                         location.toString(), description.toString(), image.toString(),
-                        tags.toString().toInt(), eventSubscribers.toString().toInt(),DatabaseArrayConverter
-                            .convertToArray(subscribersId.toString(), "event ${id.toString().toInt()}"))
+                        tags.toString().toInt(), eventSubscribers.toString().toInt(),
+                        //DatabaseArrayConverter.convertToArray(subscribersId.toString(), "event ${id.toString().toInt()}"))
+                        DatabaseArrayConverter.jsonToArray(subscribersId.toString()))
                     notes.add(note)
                     Log.e("repository", "note ${note.name} find")
                     return notes
@@ -64,7 +65,7 @@ class EventRepository(val context: Context) {
                         name.toString(), address.toString(), startTime.toString(),
                         location.toString(), description.toString(), image.toString(),
                         tags.toString().toInt(), eventSubscribers.toString().toInt(),DatabaseArrayConverter
-                            .convertToArray(subscribersId.toString(), "eventArray"))
+                            .jsonToArray(subscribersId.toString()))
                     notes.add(note)
 
                     return notes
@@ -95,7 +96,7 @@ class EventRepository(val context: Context) {
                     note = EventLocal(id, createdBy.toString().toInt(), name.toString(), address.toString(), startTime.toString(),
                         location.toString(), description.toString(), image.toString(),
                         tags.toString().toInt(), eventSubscribers.toString().toInt(),DatabaseArrayConverter
-                            .convertToArray(subscribersId.toString(), "eventArray"))
+                            .jsonToArray(subscribersId.toString()))
                     return note
                 }
             })

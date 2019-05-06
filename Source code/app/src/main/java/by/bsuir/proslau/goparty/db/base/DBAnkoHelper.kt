@@ -11,7 +11,7 @@ import by.bsuir.proslau.goparty.utils.DatabaseArrayConverter
 import by.bsuir.proslau.goparty.utils.StorageUtils
 import org.jetbrains.anko.db.*
 
-class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", null, 1) {
+class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v36", null, 1) {
 
     companion object {
         private var instance: DBAnkoHelper? = null
@@ -121,7 +121,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 3,
             "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 1", arrayListOf(1,2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
             )
 
         database.insert("events",
@@ -140,7 +140,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 3,
             "eventSubscribers" to 1,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 2", arrayListOf(1))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1))
         )
 
         database.insert("events",
@@ -159,7 +159,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 3,
             "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 3", arrayListOf(1,2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
         )
 
         database.insert("events",
@@ -178,7 +178,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 3,
             "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 4", arrayListOf(1,2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
         )
 
         database.insert("events",
@@ -197,7 +197,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 3,
             "eventSubscribers" to 0,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 5", arrayListOf())
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf())
         )
 
         database.insert("events",
@@ -216,7 +216,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 3,
             "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 6", arrayListOf(1,2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
         )
 
         database.insert("events",
@@ -235,7 +235,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 3,
             "eventSubscribers" to 1,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 7", arrayListOf(1))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1))
         )
 
         database.insert("events",
@@ -254,7 +254,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 2,
             "eventSubscribers" to 1,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 8", arrayListOf(2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(2))
         )
 
         database.insert("events",
@@ -273,7 +273,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 2,
             "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 9", arrayListOf(1,2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
         )
 
         database.insert("events",
@@ -292,7 +292,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 2,
             "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 10", arrayListOf(1,2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
         )
 
         database.insert("events",
@@ -311,7 +311,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 2,
             "eventSubscribers" to 1,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 11", arrayListOf(1))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1))
         )
 
         database.insert("events",
@@ -330,7 +330,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 2,
             "eventSubscribers" to 1,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 12", arrayListOf(1))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1))
         )
 
         database.insert("events",
@@ -349,7 +349,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 4,
             "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 13", arrayListOf(1,2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
         )
 
         database.insert("events",
@@ -368,7 +368,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 4,
             "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 14", arrayListOf(1,2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
         )
 
         database.insert("events",
@@ -387,7 +387,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", 
             ),
             "tags" to 4,
             "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event 15", arrayListOf(1,2))
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
         )
     }
 
