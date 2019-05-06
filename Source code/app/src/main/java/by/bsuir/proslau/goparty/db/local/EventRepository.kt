@@ -31,7 +31,7 @@ class EventRepository(val context: Context) {
                         name.toString(), address.toString(), startTime.toString(),
                         location.toString(), description.toString(), image.toString(),
                         tags.toString().toInt(), eventSubscribers.toString().toInt(),DatabaseArrayConverter
-                            .convertToArray(subscribersId.toString(), "eventArray"))
+                            .convertToArray(subscribersId.toString(), "event ${id.toString().toInt()}"))
                     notes.add(note)
                     Log.e("repository", "note ${note.name} find")
                     return notes

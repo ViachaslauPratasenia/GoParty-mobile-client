@@ -1,10 +1,8 @@
 package by.bsuir.proslau.goparty.db.base
 
-import android.app.Application
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.BitmapFactory
-import by.bsuir.proslau.goparty.App
 import by.bsuir.proslau.goparty.App.Companion.context
 import by.bsuir.proslau.goparty.R
 import by.bsuir.proslau.goparty.entity.local.EventLocal
@@ -13,7 +11,7 @@ import by.bsuir.proslau.goparty.utils.DatabaseArrayConverter
 import by.bsuir.proslau.goparty.utils.StorageUtils
 import org.jetbrains.anko.db.*
 
-class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v31", null, 1) {
+class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v34", null, 1) {
 
     companion object {
         private var instance: DBAnkoHelper? = null
@@ -74,7 +72,8 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v31", 
             "image" to StorageUtils.saveToInternalStorage(
                 BitmapFactory.decodeResource(context.resources, R.drawable.me),
                 "proslau"),
-            "eventsId" to DatabaseArrayConverter.convertToString("user 1", arrayListOf(1,2,3,4,6,7,8,9,10,11,12)),
+            //"eventsId" to DatabaseArrayConverter.convertToString("user 1", arrayListOf(1,2,3,4,6,7,8,9,10,11,12)),
+            "eventsId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2,3,4,6,7,8,9,10,11,12)),
             "password" to "123",
             "isModer" to 1,
             "phone" to "+375445712877",
@@ -95,7 +94,8 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v31", 
             "image" to StorageUtils.saveToInternalStorage(
                 BitmapFactory.decodeResource(context.resources, R.drawable.vitaly),
                 "vitaly"),
-            "eventsId" to DatabaseArrayConverter.convertToString("user 2", arrayListOf(1,3,4,6,10,11,12)),
+            //"eventsId" to DatabaseArrayConverter.convertToString("user 2", arrayListOf(1,3,4,6,10,11,12)),
+            "eventsId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,3,4,6,10,11,12)),
             "password" to "test",
             "isModer" to 0,
             "phone" to "+37544",
