@@ -45,6 +45,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.sideusers.SideUserActivity" />
         <activity android:name=".ui.profile.SideProfileActivity" />
+        <activity android:name=".ui.all_events.EventByTagsActivity" />
     </application>
 
 </manifest>

@@ -75,9 +75,6 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<EventLocal>, pri
             .asBitmap()
             .load(currentUser.image + "/${currentUser.username}.jpg")
             .into(viewHolder.profileAvatar)
-        //viewHolder.profileAvatar.setImageBitmap(Base64Converter.convertToBitmap(currentUser.image))
-        /*viewHolder.profileAvatar.setImageBitmap(StorageUtils.loadImageFromStorage(currentUser.image,
-            currentUser.username))*/
         viewHolder.profileName.text = currentUser.username
         viewHolder.eventTitle.text = currentItem.name
         viewHolder.eventDate.text = currentItem.startTime
@@ -87,9 +84,6 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<EventLocal>, pri
             .asBitmap()
             .load(currentItem.image + "/${currentItem.name}.jpg")
             .into(viewHolder.eventPhoto)
-        //viewHolder.eventPhoto.setImageBitmap(Base64Converter.convertToBitmap(currentItem.image))
-        /*viewHolder.eventPhoto.setImageBitmap(StorageUtils.loadImageFromStorage(currentItem.image,
-            currentItem.name))*/
         viewHolder.eventJoin.setOnClickListener {
             Toast.makeText(context, currentItem.name + " joined", Toast.LENGTH_SHORT).show()
         }
@@ -107,6 +101,7 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<EventLocal>, pri
         val intent = Intent(context, EventDetailActivity::class.java)
         intent.putExtra("event", currentEvent)
         intent.putExtra("user", currentUser)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(intent)
     }
 

@@ -140,4 +140,10 @@ class EventRepository(val context: Context) {
     fun delete(event: EventLocal) = context.database.use{
         delete("users", whereClause = "id = {eventId}", args = *arrayOf("eventId" to event.id))
     }
+
+    fun getByTag(tag: Int): ArrayList<EventLocal>{
+        return findAll().filter {
+            it.tags == tag
+        } as ArrayList
+    }
 }
