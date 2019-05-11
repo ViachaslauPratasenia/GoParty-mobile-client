@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_recommended -> {
+                recommendedFragment.updateView()
                 fragmentManager.beginTransaction().hide(activeFragment).show(recommendedFragment).commit()
                 activeFragment = recommendedFragment
                 return@OnNavigationItemSelectedListener true
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_joined -> {
+                favoriteFragment.updateView()
                 fragmentManager.beginTransaction().hide(activeFragment).show(favoriteFragment).commit()
                 activeFragment = favoriteFragment
                 return@OnNavigationItemSelectedListener true

@@ -115,7 +115,7 @@ class EventRepository(val context: Context) {
             "image" to event.image,
             "tags" to event.tags,
             "eventSubscribers" to event.eventSubscribers,
-            "subscribersId" to DatabaseArrayConverter.convertToString("event ${event.id}", event.subscribersId)
+            "subscribersId" to DatabaseArrayConverter.arrayToString(event.subscribersId)
         )
         Log.e("insert", "${event.id} is created")
     }
@@ -132,8 +132,8 @@ class EventRepository(val context: Context) {
             "image" to event.image,
             "tags" to event.tags,
             "eventSubscribers" to event.eventSubscribers,
-            "subscribersId" to event.subscribersId)
-            .whereArgs("id = {eventId}", "eventId" to event.id)
+            "subscribersId" to DatabaseArrayConverter.arrayToString(event.subscribersId))
+            .whereArgs("id = ${event.id}")
             .exec()
     }
 

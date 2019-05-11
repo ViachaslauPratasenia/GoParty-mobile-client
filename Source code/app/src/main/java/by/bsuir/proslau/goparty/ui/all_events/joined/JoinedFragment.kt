@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import by.bsuir.proslau.goparty.R
 import by.bsuir.proslau.goparty.db.local.EventRepository
 import by.bsuir.proslau.goparty.db.local.LocalStore
@@ -28,16 +29,6 @@ class JoinedFragment : Fragment() {
         joinedView = inflater.inflate(R.layout.fragment_joined, container, false)
         initRecommendedRecyclerView()
 
-        user = UserRepository(joinedView.context).findUser(LocalStore().userId!!)
-
-        val eventsList = user.eventsId
-        val newList: ArrayList<EventLocal> = ArrayList()
-        eventsList.forEach {
-            newList.add(EventRepository(joinedView.context).findById(it))
-        }
-        events = newList
-        adapter.setData(events)
-
         Log.e("joined", "is called")
 
         return joinedView
@@ -53,4 +44,16 @@ class JoinedFragment : Fragment() {
         joinedView.recycler_joined.layoutManager = LinearLayoutManager(context)
     }
 
+    fun updateView(){
+        Log.e("Joined fragment", "updateView method")
+        user = UserRepository(joinedView.context).findUser(LocalStore().userId!!)
+
+        val eventsList = user.eventsId
+        val newList: ArrayList<EventLocal> = ArrayList()
+        eventsList.forEach {
+            newList.add(EventRepository(joinedView.context).findById(it))
+        }
+        events = newList
+        adapter.setData(events)
+    }
 }

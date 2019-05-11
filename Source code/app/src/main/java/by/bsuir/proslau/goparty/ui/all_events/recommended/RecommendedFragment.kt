@@ -98,4 +98,10 @@ class RecommendedFragment : Fragment() {
             }
         }
     }
+
+    fun updateView(){
+        events = EventLocalManager.getEventsByPage(page)
+        adapter.setData(events)
+        initPage()
+    }
 }
