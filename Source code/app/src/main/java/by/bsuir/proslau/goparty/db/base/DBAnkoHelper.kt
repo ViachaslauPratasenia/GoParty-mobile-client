@@ -11,7 +11,7 @@ import by.bsuir.proslau.goparty.utils.DatabaseArrayConverter
 import by.bsuir.proslau.goparty.utils.StorageUtils
 import org.jetbrains.anko.db.*
 
-class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v37", null, 1) {
+class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v40", null, 1) {
 
     companion object {
         private var instance: DBAnkoHelper? = null
@@ -73,7 +73,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v37", 
                 BitmapFactory.decodeResource(context.resources, R.drawable.me),
                 "proslau"),
             //"eventsId" to DatabaseArrayConverter.convertToString("user 1", arrayListOf(1,2,3,4,6,7,8,9,10,11,12)),
-            "eventsId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2,3,4,6,7,8,9,10,11,12)),
+            "eventsId" to DatabaseArrayConverter.arrayToString(arrayListOf()),
             "password" to "123",
             "isModer" to 1,
             "phone" to "+375445712877",
@@ -95,7 +95,7 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v37", 
                 BitmapFactory.decodeResource(context.resources, R.drawable.vitaly),
                 "vitaly"),
             //"eventsId" to DatabaseArrayConverter.convertToString("user 2", arrayListOf(1,3,4,6,10,11,12)),
-            "eventsId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,3,4,6,10,11,12)),
+            "eventsId" to DatabaseArrayConverter.arrayToString(arrayListOf()),
             "password" to "test",
             "isModer" to 0,
             "phone" to "+37544",
@@ -139,8 +139,8 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v37", 
                 "Football Match 2"
             ),
             "tags" to 3,
-            "eventSubscribers" to 1,
-            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1))
+            "eventSubscribers" to 0,
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf())
         )
 
         database.insert("events",
@@ -158,8 +158,8 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v37", 
                 "Football Match 3"
             ),
             "tags" to 3,
-            "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
+            "eventSubscribers" to 0,
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf())
         )
 
         database.insert("events",
@@ -177,8 +177,8 @@ class DBAnkoHelper (context: Context) : ManagedSQLiteOpenHelper(context, "v37", 
                 "Football Match 4"
             ),
             "tags" to 3,
-            "eventSubscribers" to 2,
-            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf(1,2))
+            "eventSubscribers" to 0,
+            "subscribersId" to DatabaseArrayConverter.arrayToString(arrayListOf())
         )
 
         database.insert("events",

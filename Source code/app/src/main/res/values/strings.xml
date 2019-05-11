@@ -27,4 +27,8 @@
     <string name="delete_event_success">Event deleted successfully</string>
     <string name="page">Page</string>
     <string name="no_social">No social network added</string>
+    <string name="sub_issued">Subscription issued</string>
+    <string name="sub_canceled">Subscription canceled</string>
+    <string name="join_event">Join event</string>
+    <string name="leave_event">Leave event</string>
 </resources>
