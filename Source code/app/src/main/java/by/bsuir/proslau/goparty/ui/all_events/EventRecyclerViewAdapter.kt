@@ -8,22 +8,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import by.bsuir.proslau.goparty.R
-import by.bsuir.proslau.goparty.db.local.EventRepository
 import by.bsuir.proslau.goparty.db.local.UserRepository
-import by.bsuir.proslau.goparty.entity.Event
-import by.bsuir.proslau.goparty.entity.authorization.ShortUser
 import by.bsuir.proslau.goparty.entity.local.EventLocal
 import by.bsuir.proslau.goparty.entity.local.UserLocal
-import by.bsuir.proslau.goparty.utils.Base64Converter
-import by.bsuir.proslau.goparty.utils.StorageUtils
 import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
-import java.io.File
 
 class EventRecyclerViewAdapter(private var eventList: ArrayList<EventLocal>, private val context: Context) :
     RecyclerView.Adapter<EventRecyclerViewAdapter.ViewHolder>() {
@@ -84,12 +76,6 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<EventLocal>, pri
             .asBitmap()
             .load(currentItem.image + "/${currentItem.name}.jpg")
             .into(viewHolder.eventPhoto)
-        viewHolder.eventJoin.setOnClickListener {
-            Toast.makeText(context, currentItem.name + " joined", Toast.LENGTH_SHORT).show()
-        }
-        viewHolder.eventOpen.setOnClickListener {
-            startActivityWithData(currentUser, currentItem)
-        }
         viewHolder.constraintLayout.setOnClickListener {
             startActivityWithData(currentUser, currentItem)
         }
@@ -127,8 +113,6 @@ class EventRecyclerViewAdapter(private var eventList: ArrayList<EventLocal>, pri
         var eventDate : TextView = itemView.findViewById(R.id.event_date)
         var eventLocation : TextView = itemView.findViewById(R.id.event_location)
         var eventPhoto : ImageView = itemView.findViewById(R.id.event_image)
-        var eventJoin : Button = itemView.findViewById(R.id.btn_event_join)
-        var eventOpen : Button = itemView.findViewById(R.id.btn_event_open)
         var constraintLayout: ConstraintLayout = itemView.findViewById(R.id.event_parent_layout)
     }
 }
