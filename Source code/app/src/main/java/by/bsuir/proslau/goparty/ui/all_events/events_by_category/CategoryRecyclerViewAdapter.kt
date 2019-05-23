@@ -1,6 +1,7 @@
 package by.bsuir.proslau.goparty.ui.all_events.events_by_category
 
 import android.content.Context
+import android.content.Intent
 import android.support.constraint.ConstraintLayout
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import by.bsuir.proslau.goparty.R
+import by.bsuir.proslau.goparty.ui.all_events.EventByTagsActivity
 
 import java.util.ArrayList
 
@@ -26,7 +28,10 @@ class CategoryRecyclerViewAdapter(private var categoriesList: ArrayList<Category
         viewHolder.categoryImage.setImageResource(currentItem.image)
         viewHolder.categoryTitle.text = currentItem.title
         viewHolder.constraintLayout.setOnClickListener {
-            Toast.makeText(context, currentItem.title, Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, EventByTagsActivity::class.java)
+            intent.putExtra("tagCode", currentItem.code)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
         }
     }
 

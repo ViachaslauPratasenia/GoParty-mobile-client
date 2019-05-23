@@ -11,11 +11,18 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import by.bsuir.proslau.goparty.App
 import by.bsuir.proslau.goparty.R
+import by.bsuir.proslau.goparty.db.local.LocalStore
+import by.bsuir.proslau.goparty.db.local.UserRepository
+import kotlinx.android.synthetic.main.activity_profile_edit.*
 
 class ProfileEditActivity : AppCompatActivity() {
 
     var code : Int = 0
+
+    private val localStore = LocalStore()
+    val user = UserRepository(App.context).findUser(localStore.userId!!)
 
     private val LOCATION_CODE = 1
     private val EMAIL_CODE = 2
@@ -31,7 +38,6 @@ class ProfileEditActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile_edit)
 
         val image = findViewById<View>(R.id.profile_edit_image) as ImageView
-        val editText = findViewById<View>(R.id.profile_edit_text) as EditText
 
         val toolbar = findViewById<View>(R.id.profile_edit_toolbar) as Toolbar
         setSupportActionBar(toolbar)
@@ -41,46 +47,56 @@ class ProfileEditActivity : AppCompatActivity() {
 
         code = intent.getIntExtra("code", 0)
 
+
+
         when(code){
             LOCATION_CODE -> {
                 image.setBackgroundResource(R.drawable.location_icon)
-                editText.hint = "Location"
-                editText.inputType = InputType.TYPE_CLASS_TEXT
+                profile_edit_text.hint = "Location"
+                profile_edit_text.setText(user.location)
+                profile_edit_text.inputType = InputType.TYPE_CLASS_TEXT
             }
             EMAIL_CODE -> {
                 image.setBackgroundResource(R.drawable.email_icon)
-                editText.hint = "Email"
-                editText.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+                profile_edit_text.hint = "Email"
+                profile_edit_text.setText(user.email)
+                profile_edit_text.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
             }
             PHONE_CODE -> {
                 image.setBackgroundResource(R.drawable.phone_icon)
-                editText.hint = "Phone number"
-                editText.inputType = InputType.TYPE_CLASS_PHONE
+                profile_edit_text.hint = "Phone number"
+                profile_edit_text.setText(user.phone)
+                profile_edit_text.inputType = InputType.TYPE_CLASS_PHONE
             }
             VK_CODE -> {
                 image.setBackgroundResource(R.drawable.vk_icon)
-                editText.hint = "VK"
-                editText.inputType = InputType.TYPE_CLASS_TEXT
+                profile_edit_text.hint = "VK"
+                profile_edit_text.setText(user.vk)
+                profile_edit_text.inputType = InputType.TYPE_CLASS_TEXT
             }
             FACEBOOK_CODE -> {
                 image.setBackgroundResource(R.drawable.facebook_icon)
-                editText.hint = "Facebook"
-                editText.inputType = InputType.TYPE_CLASS_TEXT
+                profile_edit_text.hint = "Facebook"
+                profile_edit_text.setText(user.facebook)
+                profile_edit_text.inputType = InputType.TYPE_CLASS_TEXT
             }
             ODNOKL_CODE -> {
                 image.setBackgroundResource(R.drawable.odno_icon)
-                editText.hint = "Odnoklassniki"
-                editText.inputType = InputType.TYPE_CLASS_TEXT
+                profile_edit_text.hint = "Odnoklassniki"
+                profile_edit_text.setText(user.ok)
+                profile_edit_text.inputType = InputType.TYPE_CLASS_TEXT
             }
             TELEGRAM_CODE -> {
                 image.setBackgroundResource(R.drawable.telegram_icon)
-                editText.hint = "Telegram"
-                editText.inputType = InputType.TYPE_CLASS_TEXT
+                profile_edit_text.hint = "Telegram"
+                profile_edit_text.setText(user.telegram)
+                profile_edit_text.inputType = InputType.TYPE_CLASS_TEXT
             }
             SKYPE_CODE -> {
                 image.setBackgroundResource(R.drawable.skype_icon)
-                editText.hint = "Skype"
-                editText.inputType = InputType.TYPE_CLASS_TEXT
+                profile_edit_text.hint = "Skype"
+                profile_edit_text.setText(user.skype)
+                profile_edit_text.inputType = InputType.TYPE_CLASS_TEXT
             }
         }
     }
@@ -97,6 +113,33 @@ class ProfileEditActivity : AppCompatActivity() {
                 /*val intent = Intent()
                 intent.putExtra("bio", user.bio)
                 setResult(Activity.RESULT_OK, intent)*/
+                when(code){
+                    LOCATION_CODE -> {
+                        user.location = profile_edit_text.text.toString()
+                    }
+                    EMAIL_CODE -> {
+                        user.email = profile_edit_text.text.toString()
+                    }
+                    PHONE_CODE -> {
+                        user.phone = profile_edit_text.text.toString()
+                    }
+                    VK_CODE -> {
+                        user.vk = profile_edit_text.text.toString()
+                    }
+                    FACEBOOK_CODE -> {
+                        user.facebook = profile_edit_text.text.toString()
+                    }
+                    ODNOKL_CODE -> {
+                        user.ok = profile_edit_text.text.toString()
+                    }
+                    TELEGRAM_CODE -> {
+                        user.telegram = profile_edit_text.text.toString()
+                    }
+                    SKYPE_CODE -> {
+                        user.skype = profile_edit_text.text.toString()
+                    }
+                }
+                UserRepository(App.context).update(user)
                 finish()
                 return true
             }

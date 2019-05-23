@@ -17,7 +17,7 @@ class CategoryFragment : Fragment() {
     private val categoriesManager = CategoriesLogicManager()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        view = inflater.inflate(R.layout.fragment_events, container, false)
+        view = inflater.inflate(R.layout.fragment_categories, container, false)
         initImageBitmaps()
         return view
     }
